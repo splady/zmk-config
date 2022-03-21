@@ -14,7 +14,7 @@
                 compatible = "zmk,behavior-hold-tap";
                 label = "HOMEROW_MODS";
                 #binding-cells = <2>;
-                tapping-term-ms = <150>;
+                tapping-term-ms = <321>;
                 quick-tap-ms = <0>;
                 flavor = "tap-preferred";
                 bindings = <&kp>, <&kp>;
@@ -31,9 +31,9 @@
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  |   |  CTRL
 //                    | GUI | LWR | ENT |   | SPC | RSE  | ALT |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI    &kp ESC 
-   &kp BSPC &hm LCTL A    &hm LGUI R    &hm LALT S    &hm LSFT T &kp G   &kp M &hm RCTL N    &hm RGUI E    &hm RALT I    &hm RSFT O &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp  LCTRL
+   &hm ESC TAB   &hm LCTL Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &hm SEMI COLON   &hm C_PLAY_PAUSE C_MUTE
+   &kp BSPC &hm LCTL A    &hm LGUI R    &hm LALT S    &hm LSFT T &kp G   &kp M &hm RSFT N    &hm RALT E    &hm RGUI I    &hm RCTL O &hm SQT DQT
+   &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &hm FSLH QMARK &kp  LCTRL
                   &kp LGUI &mo 1 &kp  RET  &kp SPACE &mo 2 &kp RALT
                         >;
                 };
