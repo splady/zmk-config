@@ -31,10 +31,10 @@
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  |   |  CTRL
 //                    | GUI | LWR | ENT |   | SPC | RSE  | ALT |
                         bindings = <
-   &hm ESC TAB   &hm LCTL Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &hm SEMI COLON   &hm C_PLAY_PAUSE C_MUTE
-   &kp BSPC &hm LCTL A    &hm LGUI R    &hm LALT S    &hm LSFT T &kp G   &kp M &hm RSFT N    &hm RALT E    &hm RGUI I    &hm RCTL O &hm SQT DQT
+   &hm ESC TAB   &hm LCTL Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &hm SEMI COLON   &hm C_MUTE C_PLAY_PAUSE
+   &kp BSPC &hm LCTL A    &hm LGUI R    &hm LALT S    &hm LSFT T &kp G   &kp M &hm RSFT N    &hm RALT E    &hm RGUI I    &hm RCTL O &hm DQT SQT
    &kp LSHFT &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &hm FSLH QMARK &kp  LCTRL
-                  &kp LGUI &mo 1 &kp  RET  &kp SPACE &mo 2 &kp RALT
+                  &kp LA(LC(LGUI)) &mo 1 &kp  RET  &kp SPACE &mo 2 &kp RALT
                         >;
                 };
                 lower_layer {
