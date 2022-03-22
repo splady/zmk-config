@@ -26,6 +26,13 @@
                         bindings = <&kp>, <&kp>;
                         retro-tap;
                 };
+                td0: tap_dance_0 {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_0";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp>, <&kp>, <&kp>;
+                };
         };
 
         keymap {
@@ -54,7 +61,7 @@
                         bindings = <
    &trans  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT                          &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &trans
    &kp DEL &hm LCTL LBKT    &hm LGUI RBKT    &hm LALT LPAR    &hm LSFT RPAR    &kp GRAVE                        &kp BSLH &kp LBRC &kp RBRC &kp MINUS &kp EQUAL &kp GRAVE
-   &kp LSHFT &kp LESS_THAN &kp GREATER_THAN &kp LBRC &kp RBRC &hm DOT COMMA   &kp UNDER &kp TILDE &kp PLUS &kp UNDER &kp PIPE &trans
+   &kp LSHFT &kp LESS_THAN &kp GREATER_THAN &kp LBRC &kp RBRC &td0 DOT COMMA QMARK  &kp UNDER &kp TILDE &kp PLUS &kp UNDER &kp PIPE &trans
                     	     &trans &trans   &trans   &trans   &trans    &trans
                         >;
                 };
