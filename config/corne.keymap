@@ -18,6 +18,10 @@
 
 #define HYPR LC(LG(LALT))
 
+&caps_word {
+    continue-list = <UNDERSCORE MINUS PLUS STAR LPAR RPAR SPACE TAB RET>;
+};
+
 / {
         behaviors {
                 hm: homerow_mods {
@@ -37,6 +41,13 @@
                         quick-tap-ms = <0>;
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
+                };
+                sftcps: shift_caps_word {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "SHIFT_CAPS_WORD";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp SHIFT>, <&caps_word>;
                 };
                 tdm: tap_dance_media {
                         compatible = "zmk,behavior-tap-dance";
