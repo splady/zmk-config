@@ -42,12 +42,14 @@
                         tapping-term-ms = <200>;
                         bindings = <&lt MEDIA C_PLAY_PAUSE>, <&th C_MUTE C_NEXT>;
                 };
-                tddcq: tap_dance_dcq {
+                tdsdcq: tap_dance_sdcq {
+                        // Tap Dance Space Dot Comma Question
+                        // useful when using a mouse in your right hand while coding
                         compatible = "zmk,behavior-tap-dance";
-                        label = "TAP_DANCE_DCQ";
+                        label = "TAP_DANCE_SDCQ";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&kp DOT>, <&kp COMMA>, <&kp QMARK>;
+                        bindings = <&th DOT SPACE>, <&th QMARK COMMA>;
                 };
         };
 
@@ -77,7 +79,7 @@
                         bindings = <
    &trans  &kp EXCL      &kp AT           &kp HASH      &kp DLLR      &kp PRCNT /**/ &kp CARET &kp AMPS      &kp KP_MULTIPLY &kp LPAR       &kp RPAR       &trans
    &kp DEL &hm LCTL LBKT &hm LGUI RBKT    &hm LALT LPAR &hm LSFT RPAR &kp GRAVE /**/ &kp PIPE  &hm RSFT LBRC &hm RALT RBRC   &hm RGUI MINUS &hm RCTL EQUAL &kp GRAVE
-   &trans  &kp LESS_THAN &kp GREATER_THAN &kp LBRC      &kp RBRC      &tddcq    /**/ &kp UNDER &kp TILDE     &kp PLUS        &kp UNDER      &kp BSLH       &trans
+   &trans  &kp LESS_THAN &kp GREATER_THAN &kp LBRC      &kp RBRC      &tdsdcq    /**/ &kp UNDER &kp TILDE     &kp PLUS        &kp UNDER      &kp BSLH       &trans
                     	                  &trans        &trans        &trans    /**/ &trans    &trans        &trans
                         >;
                 };
