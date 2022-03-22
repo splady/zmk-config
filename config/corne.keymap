@@ -16,6 +16,7 @@
 #define GAMING  5
 
 #define HYPR LC(LG(LALT))
+#define AUDOUT LA(LC(F11)) //used to swap audio output using SoundSwitch on Windows
 
 / {
         behaviors {
@@ -142,9 +143,9 @@
 // |       |     |     |     |     |     |\__/|     |     | PREV | NEXT |      | VOL_DN |
 //                     |     |     |     |\__/|     |     |      |
                         bindings = <
-   &kp C_SLEEP &trans       &trans       &trans       &trans       &trans       /**/ &trans   &trans   &trans     &trans     &kp C_MUTE &trans
-   &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 /**/ &kp LEFT &kp DOWN &kp UP     &kp RIGHT  &trans     &kp C_VOL_UP
-   &trans      &trans       &trans       &trans       &trans       &trans       /**/ &trans   &trans   &kp C_PREV &kp C_NEXT &trans     &kp C_VOL_DN
+   &kp C_SLEEP_MODE &trans       &trans       &trans       &trans       &trans       /**/ &trans   &trans   &trans     &trans     &kp C_MUTE &trans
+   &bt BT_CLR       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 /**/ &kp LEFT &kp DOWN &kp UP     &kp RIGHT  &kp AUDOUT &kp C_VOL_UP
+   &trans           &trans       &trans       &trans       &trans       &trans       /**/ &trans   &trans   &kp C_PREV &kp C_NEXT &trans     &kp C_VOL_DN
                           	         &trans       &trans       &trans       /**/ &trans   &trans   &trans
                         >;
                 };
