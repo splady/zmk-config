@@ -38,7 +38,7 @@
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
                 };    
-                smartcaps: smart_caps_word {
+                smart_caps: smart_caps_word {
                         compatible = "zmk,behavior-caps-word";
                         label = "SMART_CAPS";
                         #binding-cells = <0>;
@@ -49,7 +49,7 @@
                         label = "SHIFT_CAPS_WORD";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&kp SHIFT>, <&smartcaps>;
+                        bindings = <&kp LSHIFT>, <&smart_caps>;
                 };
                 tdm: tap_dance_media {
                         compatible = "zmk,behavior-tap-dance";
