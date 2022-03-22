@@ -12,8 +12,9 @@
 #define SYMBOLS 1
 #define NUMBERS 2
 #define NAVI    3
-#define MEDIA   4
-#define GAMING  5
+#define NUMPAD  4
+#define MEDIA   5
+#define GAMING  6
 
 #define HYPR LC(LG(LALT))
 #define AUDOUT LA(LC(F11)) //used to swap audio output using SoundSwitch on Windows
@@ -73,7 +74,7 @@
                         label = "TAP_DANCE_LAYERS";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&mo SYMBOLS>, <&none>, <&to GAMING>;
+                        bindings = <&mo SYMBOLS>, <&to NUMPAD>, <&to GAMING>;
                 };
         };
 
@@ -82,15 +83,15 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L   |  U  |  Y  | ; : | Media |
-// | BKSP |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N   |  E  |  I  |  O  | '  "  |
-// | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H   |  ,  |  .  | / ? | Nums  |  
-//                    | HYPR| LWR | ENT |\__/| SPC | RSE  | ALT |
+// | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L  |  U  |  Y  | ; : | Media |
+// | BKSP |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N  |  E  |  I  |  O  | '  "  |
+// | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H  |  ,  |  .  | / ? | Nums  |  
+//                    | HYPR| LWR | ENT |\__/| SPC | SYM | RSE |
                         bindings = <
    &th ESC TAB &hm LCTL Q &kp W            &kp F      &kp P      &kp B /**/ &kp J &kp L      &kp U      &kp Y      &th COLON SEMI &tdm
    &kp BSPC    &hm LCTL A &hm LGUI R       &hm LALT S &hm LSFT T &kp G /**/ &kp M &hm RSFT N &hm RALT E &hm RGUI I &hm RCTL O     &th DQT SQT
-   &sftcps     &kp Z      &kp X            &kp C      &kp D      &kp V /**/ &kp K &kp H      &kp COMMA  &kp DOT    &th QMARK FSLH &mo NUMBERS
-                          &kp HYPR   &lt NAVI LA(TAB) &lt SYMBOLS RET  /**/ &lt NAVI SPACE   &tdlyr     &kp RALT
+   &sftcps     &kp Z      &kp X            &kp C      &kp D      &kp V /**/ &kp K &kp H      &kp COMMA  &kp DOT    &th QMARK FSLH &lt NUMBERS DEL
+                          &kp HYPR   &lt NAVI LA(TAB) &lt SYMBOLS RET  /**/ &lt NAVI SPACE   &lt SYMBOLS RET       &tdlyr 
                         >;
                 };
 
@@ -136,6 +137,20 @@
                         >;
                 };
 
+                numpad_layer {
+// -----------------------------------------------------------------------------------------
+// | TAB  |  F1 |  F2 |  F3 |  F4 |  F5 |\__/|     |  7  |  8  |  9  |     |    |
+// | BKSP |  1  |  2  |  3  |  4  |  5  |\__/|  /  |  4  |  5  |  6  |  -  |    |
+// | SHFT | F11 | F12 |     |     |     |\__/|  *  |  1  |  2  |  3  |  +  |    |
+//                    | HYPR|     | ENT |\__/| SPC | LWR |  0  |
+                        bindings = <
+   &trans &trans &trans &trans &trans &trans /**/ &trans    &kp N7  &kp N8  &kp N9  &trans    &trans
+   &trans &trans &trans &trans &trans &trans /**/ &kp SLASH &kp N4  &kp N5  &kp N6  &kp MINUS &trans
+   &trans &trans &trans &trans &trans &trans /**/ &kp STAR  &kp N1  &kp N2  &kp N3  &kp PLUS  &trans
+                        &trans &trans &trans /**/ &trans &to DEFAULT &kp N0
+                        >;
+                };
+
                 media_layer {
 // -----------------------------------------------------------------------------------------
 // | SLEEP |     |     |     |     |     |\__/|     |     |      |      | MUTE |        |
@@ -155,12 +170,12 @@
 // | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L   |  U  |  Y  |  ;  | Media |
 // | BKSP |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N   |  E  |  I  |  O  |   '   |
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H   |  ,  |  .  |  /  | Nums  |  
-//                    | HYPR| LWR | ENT |\__/| SPC | RSE  | ALT |
+//                    | HYPR| LWR | ENT |\__/| SPC | LWR  | ALT |
                         bindings = <
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B /**/ &kp J &kp L &kp U     &kp Y      &kp SEMI &tdm
    &kp BSPC    &kp A &kp R &kp S &kp T &kp G /**/ &kp M &kp N &kp E     &kp I      &kp O    &kp C_VOL_UP
    &kp LSHFT   &kp Z &kp X &kp C &kp D &kp V /**/ &kp K &kp H &kp COMMA &kp DOT    &kp FSLH &kp C_VOL_DN
-   &lt SYMBOLS RET   &kp LCTL    &kp SPACE   /**/ &lt NAVI SPACE        &kp RALT   &to DEFAULT
+   &lt SYMBOLS RET   &kp LCTL    &kp SPACE   /**/ &lt NAVI SPACE    &to DEFAULT    &kp RALT
                         >;
                 };
         };
