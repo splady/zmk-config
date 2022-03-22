@@ -70,23 +70,23 @@
 
                 symbols_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |\__/|  ^  |  &  |  *  |  (  |  )  |   |
-// | DEL  |  [  |  ]  |  (  |  )  |  `  |\__/| "|" |  {  |  }  |  -  |  =  | ` |
-// | SHFT |  <  |  >  |  {  |  }  |  .  |\__/|  _  |  ~  |  +  |  _  |  \  |   |
+// |     |  !  |  @  |  #  |  $  |  %  |\__/|  ^  |  &  |  *  |  (  |  )  |   |
+// | DEL |  [  |  ]  |  (  |  )  |  `  |\__/| "|" |  {  |  }  |  -  |  =  | ` |
+// |     |  <  |  >  |  {  |  }  |  .  |\__/|  _  |  ~  |  +  |  _  |  \  |   |
 //                    | HYPR|     | ENT |\__/| SPC |     | ALT |
                         bindings = <
-   &trans    &kp EXCL      &kp AT           &kp HASH      &kp DLLR      &kp PRCNT /**/ &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &trans
-   &kp DEL   &hm LCTL LBKT &hm LGUI RBKT    &hm LALT LPAR &hm LSFT RPAR &kp GRAVE /**/ &kp PIPE  &kp LBRC  &kp RBRC        &kp MINUS &kp EQUAL &kp GRAVE
-   &kp LSHFT &kp LESS_THAN &kp GREATER_THAN &kp LBRC      &kp RBRC      &tddcq    /**/ &kp UNDER &kp TILDE &kp PLUS        &kp UNDER &kp BSLH  &trans
-                    	                    &trans        &trans        &trans    /**/ &trans    &trans    &trans
+   &trans  &kp EXCL      &kp AT           &kp HASH      &kp DLLR      &kp PRCNT /**/ &kp CARET &kp AMPS      &kp KP_MULTIPLY &kp LPAR       &kp RPAR       &trans
+   &kp DEL &hm LCTL LBKT &hm LGUI RBKT    &hm LALT LPAR &hm LSFT RPAR &kp GRAVE /**/ &kp PIPE  &hm RSFT LBRC &hm RALT RBRC   &hm RGUI MINUS &hm RCTL EQUAL &kp GRAVE
+   &trans  &kp LESS_THAN &kp GREATER_THAN &kp LBRC      &kp RBRC      &tddcq    /**/ &kp UNDER &kp TILDE     &kp PLUS        &kp UNDER      &kp BSLH       &trans
+                    	                  &trans        &trans        &trans    /**/ &trans    &trans        &trans
                         >;
                 };
 
                 numbers_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  F1 |  F2 |  F3 |  F4 |  F5 |\__/|  F6 |  F7 |  F8 |  F9 |  F10 |     |
-// | BKSP |  1  |  2  |  3  |  4  |  5  |\__/|  6  |  7  |  8  |  9  |  0  |      |
-// | SHFT | F11 | F12 |     |     |     |\__/|     |     |     |     |     |      |
+// | TAB  |  F1 |  F2 |  F3 |  F4 |  F5 |\__/|  F6 |  F7 |  F8 |  F9 | F10 |    |
+// | BKSP |  1  |  2  |  3  |  4  |  5  |\__/|  6  |  7  |  8  |  9  |  0  |    |
+// | SHFT | F11 | F12 |     |     |     |\__/|     |     |     |     |     |    |
 //                    | HYPR|     | ENT |\__/| SPC |     | ALT |
                         bindings = <
    &trans &kp F1      &kp F2      &kp F3      &kp F4      &kp F5 /**/ &kp F6 &kp F7      &kp F8      &kp F9      &kp F10     &trans
