@@ -146,7 +146,7 @@
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B /**/ &kp J &kp L &kp U     &kp Y      &kp SEMI &tdm
    &kp BSPC    &kp A &kp R &kp S &kp T &kp G /**/ &kp M &kp N &kp E     &kp I      &kp O    &kp C_VOL_UP
    &kp LSHFT   &kp Z &kp X &kp C &kp D &kp V /**/ &kp K &kp H &kp COMMA &kp DOT    &kp FSLH &kp C_VOL_DN
-   &lt SYMBOLS RET   &kp LCTL    &kp SPACE   /**/ &lt NAVI SPACE        &kp RALT   &mo DEFAULT
+   &lt SYMBOLS RET   &kp LCTL    &kp SPACE   /**/ &lt NAVI SPACE        &kp RALT   &to DEFAULT
                         >;
                 };
         };
