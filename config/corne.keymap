@@ -8,11 +8,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define DEFAULT    0
-#define SYMBOLS    1
-#define NUMBERS    2
-#define NAVIGATION 3
-#define MEDIA      4
+#define DEFAULT 0
+#define SYMBOLS 1
+#define NUMBERS 2
+#define NAVI    3
+#define MEDIA   4
+
+#define HYPR LWIN(LC(LA))
 
 / {
         behaviors {
@@ -24,7 +26,6 @@
                         quick-tap-ms = <0>;
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
-                        retro-tap;
                 };
                 th: tap_hold {
                         compatible = "zmk,behavior-hold-tap";
@@ -63,10 +64,10 @@
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H   |  ,  |  .  | / ? | Nums  |  
 //                    | HYPR| LWR | ENT |\__/| SPC | RSE  | ALT |
                         bindings = <
-   &th ESC TAB &hm LCTL Q &kp W      &kp F      &kp P      &kp B /**/ &kp J &kp L      &kp U      &kp Y      &th COLON SEMI &tdm
-   &kp BSPC    &hm LCTL A &hm LGUI R &hm LALT S &hm LSFT T &kp G /**/ &kp M &hm RSFT N &hm RALT E &hm RGUI I &hm RCTL O     &th DQT SQT
-   &kp LSHFT   &kp Z      &kp X      &kp C      &kp D      &kp V /**/ &kp K &kp H      &kp COMMA  &kp DOT    &th QMARK FSLH &mo NUMBERS
-                          &kp LA(LC(LGUI)) &mo 1 &lt SYMBOLS RET /**/ &lt NAVIGATION SPACE &mo 2  &kp RALT
+   &th ESC TAB &hm LCTL Q &kp W            &kp F      &kp P      &kp B /**/ &kp J &kp L      &kp U      &kp Y      &th COLON SEMI &tdm
+   &kp BSPC    &hm LCTL A &hm LWIN R       &hm LALT S &hm LSFT T &kp G /**/ &kp M &hm RSFT N &hm RALT E &hm RWIN I &hm RCTL O     &th DQT SQT
+   &kp LSHFT   &kp Z      &kp X            &kp C      &kp D      &kp V /**/ &kp K &kp H      &kp COMMA  &kp DOT    &th QMARK FSLH &mo NUMBERS
+               &kp HYPR   &lt NAVI LA(TAB)    &lt SYMBOLS RET  /**/ &lt NAVI SPACE   &mo 2      &kp RALT
                         >;
                 };
 
@@ -78,8 +79,8 @@
 //                    | HYPR|     | ENT |\__/| SPC |     | ALT |
                         bindings = <
    &trans  &kp EXCL      &kp AT           &kp HASH      &kp DLLR      &kp PRCNT /**/ &kp CARET &kp AMPS      &kp KP_MULTIPLY &kp LPAR       &kp RPAR       &trans
-   &kp DEL &hm LCTL LBKT &hm LGUI RBKT    &hm LALT LPAR &hm LSFT RPAR &kp GRAVE /**/ &kp PIPE  &hm RSFT LBRC &hm RALT RBRC   &hm RGUI MINUS &hm RCTL EQUAL &kp GRAVE
-   &trans  &kp LESS_THAN &kp GREATER_THAN &kp LBRC      &kp RBRC      &tdsdcq    /**/ &kp UNDER &kp TILDE     &kp PLUS        &kp UNDER      &kp BSLH       &trans
+   &kp DEL &hm LCTL LBKT &hm LWIN RBKT    &hm LALT LPAR &hm LSFT RPAR &kp GRAVE /**/ &kp PIPE  &hm RSFT LBRC &hm RALT RBRC   &hm RWIN MINUS &hm RCTL EQUAL &kp GRAVE
+   &trans  &kp LESS_THAN &kp GREATER_THAN &kp LBRC      &kp RBRC      &tdsdcq   /**/ &kp UNDER &kp TILDE     &kp PLUS        &kp UNDER      &kp BSLH       &trans
                     	                  &trans        &trans        &trans    /**/ &trans    &trans        &trans
                         >;
                 };
@@ -92,7 +93,7 @@
 //                    | HYPR|     | ENT |\__/| SPC |     | ALT |
                         bindings = <
    &trans &kp F1      &kp F2      &kp F3      &kp F4      &kp F5 /**/ &kp F6 &kp F7      &kp F8      &kp F9      &kp F10     &trans
-   &trans &hm LCTL N1 &hm LGUI N2 &hm LALT N3 &hm LSFT N4 &kp N5 /**/ &kp N6 &hm RSFT N7 &hm RALT N8 &hm RGUI N9 &hm RCTL N0 &trans
+   &trans &hm LCTL N1 &hm LWIN N2 &hm LALT N3 &hm LSFT N4 &kp N5 /**/ &kp N6 &hm RSFT N7 &hm RALT N8 &hm RWIN N9 &hm RCTL N0 &trans
    &trans &kp F11     &kp F12     &trans      &trans      &trans /**/ &trans &trans      &trans      &trans      &trans      &trans
                                   &trans      &trans      &trans /**/ &trans &trans      &trans
                         >;
@@ -101,18 +102,18 @@
                 navigation_layer {
 // -----------------------------------------------------------------------------------------
 // |     | back | fwrd |     |     |     |\__/|      | c(LFT) | UP   | c(RGT) |     |    |
-// | DEL |  CTL | GUI  | ALT | SFT |     |\__/| HOME | LFT    | DWN  | RGT    | END |    |
+// | DEL |  CTL | WIN  | ALT | SFT |     |\__/| HOME | LFT    | DWN  | RGT    | END |    |
 // |     |      |      |     |     |     |\__/|      | PG_UP  | PG_DN|        |     |    |
 //                     |     |     |     |\__/|      |        |      |
                         bindings = <
-   &trans  &kp K_BACK   &kp K_FORWARD &trans   &trans   &trans /**/ &trans   &kp LC(LEFT) &kp UP    &kp LC(RIGHT) &trans  &trans
-   &kp DEL &kp LCTL     &kp LGUI      &kp LALT &kp LSFT &trans /**/ &kp HOME &kp LEFT     &kp DOWN  &kp RIGHT     &kp END &trans
-   &trans  &trans       &trans        &trans   &trans   &trans /**/ &trans   &kp PG_UP    &kp PG_DN &trans        &trans  &trans
-                          	      &trans   &trans   &trans /**/ &trans   &trans       &trans
-                        >;    
+   &trans  &kp K_BACK &kp K_FORWARD &kp LC(F)  &kp LC(P) &trans      /**/ &trans   &kp LC(LEFT) &kp UP    &kp LC(RIGHT) &trans  &trans
+   &kp DEL &kp LCTL   &kp LWIN      &kp LALT   &kp LSFT  &kp LC(L)   /**/ &kp HOME &kp LEFT     &kp DOWN  &kp RIGHT     &kp END &trans
+   &trans  &kp K_UNDO &kp K_CUT     &kp K_COPY &kp LC(D) &kp K_PASTE /**/ &trans   &kp PG_UP    &kp PG_DN &trans        &trans  &trans
+                          	    &trans     &trans    &trans      /**/ &trans   &trans       &trans
+                        >;
                 };
 
-                util_layer {
+                media_layer {
 // -----------------------------------------------------------------------------------------
 // | SLEEP |     |     |     |     |     |\__/|     |     |      |      | MUTE |        |
 // | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |\__/| LFT | DWN |  UP  | RGT  |      | VOL_UP |
