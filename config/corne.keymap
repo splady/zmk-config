@@ -14,8 +14,6 @@
 #define NAVI    3
 #define MEDIA   4
 
-#define HYPR LWIN(LC(LA))
-
 / {
         behaviors {
                 hm: homerow_mods {
@@ -67,7 +65,7 @@
    &th ESC TAB &hm LCTL Q &kp W            &kp F      &kp P      &kp B /**/ &kp J &kp L      &kp U      &kp Y      &th COLON SEMI &tdm
    &kp BSPC    &hm LCTL A &hm LWIN R       &hm LALT S &hm LSFT T &kp G /**/ &kp M &hm RSFT N &hm RALT E &hm RWIN I &hm RCTL O     &th DQT SQT
    &kp LSHFT   &kp Z      &kp X            &kp C      &kp D      &kp V /**/ &kp K &kp H      &kp COMMA  &kp DOT    &th QMARK FSLH &mo NUMBERS
-               &kp HYPR   &lt NAVI LA(TAB)    &lt SYMBOLS RET  /**/ &lt NAVI SPACE   &mo 2      &kp RALT
+               &kp LWIN(LC(LA))   &lt NAVI LA(TAB)    &lt SYMBOLS RET  /**/ &lt NAVI SPACE   &mo 2      &kp RALT
                         >;
                 };
 
