@@ -13,6 +13,7 @@
 #define NUMBERS 2
 #define NAVI    3
 #define MEDIA   4
+#define GAMING  5
 
 
 #define HYPR LG(LC(LALT))
@@ -53,6 +54,13 @@
                         tapping-term-ms = <200>;
                         bindings = <&th DOT SPACE>, <&th QMARK COMMA>;
                 };
+                tdslyr: tap_dance_layers {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_LAYERS";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&none>, <&none>, <&mo GAMING>;
+                };
         };
 
         keymap {
@@ -68,7 +76,7 @@
    &th ESC TAB &hm LCTL Q &kp W            &kp F      &kp P      &kp B /**/ &kp J &kp L      &kp U      &kp Y      &th COLON SEMI &tdm
    &kp BSPC    &hm LCTL A &hm LGUI R       &hm LALT S &hm LSFT T &kp G /**/ &kp M &hm RSFT N &hm RALT E &hm RGUI I &hm RCTL O     &th DQT SQT
    &kp LSHFT   &kp Z      &kp X            &kp C      &kp D      &kp V /**/ &kp K &kp H      &kp COMMA  &kp DOT    &th QMARK FSLH &mo NUMBERS
-               &kp HYPR   &lt NAVI LA(TAB)    &lt SYMBOLS RET  /**/ &lt NAVI SPACE   &mo 2      &kp RALT
+                          &kp HYPR   &lt NAVI LA(TAB) &lt SYMBOLS RET  /**/ &lt NAVI SPACE   &tdslyr      &kp RALT
                         >;
                 };
 
@@ -125,6 +133,20 @@
    &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 /**/ &kp LEFT &kp DOWN &kp UP     &kp RIGHT  &trans     &kp C_VOL_UP
    &trans      &trans       &trans       &trans       &trans       &trans       /**/ &trans   &trans   &kp C_PREV &kp C_NEXT &trans     &kp C_VOL_DN
                           	         &trans       &trans       &trans       /**/ &trans   &trans   &trans
+                        >;
+                };
+
+                gaming_layer {
+// -----------------------------------------------------------------------------------------
+// | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L   |  U  |  Y  |  ;  | Media |
+// | BKSP |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N   |  E  |  I  |  O  |   '   |
+// | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H   |  ,  |  .  |  /  | Nums  |  
+//                    | HYPR| LWR | ENT |\__/| SPC | RSE  | ALT |
+                        bindings = <
+   &th ESC TAB &kp Q &kp W &kp F &kp P &kp B /**/ &kp J &kp L &kp U     &kp Y      &kp SEMI &tdm
+   &kp BSPC    &kp A &kp R &kp S &kp T &kp G /**/ &kp M &kp N &kp E     kp I &kp O     &kp C_VOL_UP
+   &kp LSHFT   &kp Z &kp X &kp C &kp D &kp V /**/ &kp K &kp H &kp COMMA &kp DOT    &kp FSLH &kp C_VOL_DN
+   &lt SYMBOLS RET   &kp LCTL    &kp SPACE   /**/ &lt NAVI SPACE        &kp RALT   &mo DEFAULT
                         >;
                 };
         };
