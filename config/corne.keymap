@@ -15,15 +15,11 @@
 #define MEDIA   4
 #define GAMING  5
 
-
 #define HYPR LC(LG(LALT))
-
-&caps_word {
-    continue-list = <UNDERSCORE MINUS PLUS STAR LPAR RPAR SPACE TAB RET>;
-};
 
 / {
         behaviors {
+            
                 hm: homerow_mods {
                         compatible = "zmk,behavior-hold-tap";
                         label = "HOMEROW_MODS";
@@ -41,13 +37,19 @@
                         quick-tap-ms = <0>;
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
+                };    
+                smart_caps: smart_caps_word {
+                        compatible = "zmk,behavior-caps-word";
+                        label = "SMART_CAPS";
+                        #binding-cells = <0>;
+                        continue-list = <UNDERSCORE MINUS PLUS STAR LPAR RPAR SPACE TAB RET>;
                 };
                 sftcps: shift_caps_word {
                         compatible = "zmk,behavior-tap-dance";
                         label = "SHIFT_CAPS_WORD";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&kp SHIFT>, <&caps_word>;
+                        bindings = <&kp SHIFT>, <&smart_caps>;
                 };
                 tdm: tap_dance_media {
                         compatible = "zmk,behavior-tap-dance";
@@ -86,7 +88,7 @@
                         bindings = <
    &th ESC TAB &hm LCTL Q &kp W            &kp F      &kp P      &kp B /**/ &kp J &kp L      &kp U      &kp Y      &th COLON SEMI &tdm
    &kp BSPC    &hm LCTL A &hm LGUI R       &hm LALT S &hm LSFT T &kp G /**/ &kp M &hm RSFT N &hm RALT E &hm RGUI I &hm RCTL O     &th DQT SQT
-   &kp LSHFT   &kp Z      &kp X            &kp C      &kp D      &kp V /**/ &kp K &kp H      &kp COMMA  &kp DOT    &th QMARK FSLH &mo NUMBERS
+   &sftcps     &kp Z      &kp X            &kp C      &kp D      &kp V /**/ &kp K &kp H      &kp COMMA  &kp DOT    &th QMARK FSLH &mo NUMBERS
                           &kp HYPR   &lt NAVI LA(TAB) &lt SYMBOLS RET  /**/ &lt NAVI SPACE   &tdlyr     &kp RALT
                         >;
                 };
