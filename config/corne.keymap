@@ -16,7 +16,7 @@
 #define GAMING  5
 
 
-#define HYPR LG(LC(LALT))
+#define HYPR LC(LG(LALT))
 
 / {
         behaviors {
@@ -54,12 +54,12 @@
                         tapping-term-ms = <200>;
                         bindings = <&th DOT SPACE>, <&th QMARK COMMA>;
                 };
-                tdslyr: tap_dance_layers {
+                tdlyr: tap_dance_layers {
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_LAYERS";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&none>, <&none>, <&mo GAMING>;
+                        bindings = <&mo SYMBOLS>, <&none>, <&to GAMING>;
                 };
         };
 
@@ -76,7 +76,7 @@
    &th ESC TAB &hm LCTL Q &kp W            &kp F      &kp P      &kp B /**/ &kp J &kp L      &kp U      &kp Y      &th COLON SEMI &tdm
    &kp BSPC    &hm LCTL A &hm LGUI R       &hm LALT S &hm LSFT T &kp G /**/ &kp M &hm RSFT N &hm RALT E &hm RGUI I &hm RCTL O     &th DQT SQT
    &kp LSHFT   &kp Z      &kp X            &kp C      &kp D      &kp V /**/ &kp K &kp H      &kp COMMA  &kp DOT    &th QMARK FSLH &mo NUMBERS
-                          &kp HYPR   &lt NAVI LA(TAB) &lt SYMBOLS RET  /**/ &lt NAVI SPACE   &tdslyr      &kp RALT
+                          &kp HYPR   &lt NAVI LA(TAB) &lt SYMBOLS RET  /**/ &lt NAVI SPACE   &tdlyr     &kp RALT
                         >;
                 };
 
@@ -144,7 +144,7 @@
 //                    | HYPR| LWR | ENT |\__/| SPC | RSE  | ALT |
                         bindings = <
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B /**/ &kp J &kp L &kp U     &kp Y      &kp SEMI &tdm
-   &kp BSPC    &kp A &kp R &kp S &kp T &kp G /**/ &kp M &kp N &kp E     kp I &kp O     &kp C_VOL_UP
+   &kp BSPC    &kp A &kp R &kp S &kp T &kp G /**/ &kp M &kp N &kp E     &kp I      &kp O    &kp C_VOL_UP
    &kp LSHFT   &kp Z &kp X &kp C &kp D &kp V /**/ &kp K &kp H &kp COMMA &kp DOT    &kp FSLH &kp C_VOL_DN
    &lt SYMBOLS RET   &kp LCTL    &kp SPACE   /**/ &lt NAVI SPACE        &kp RALT   &mo DEFAULT
                         >;
