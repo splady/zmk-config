@@ -77,7 +77,7 @@
                 dt: double_tap {
                         compatible = "zmk,behavior-tap-dance";
                         label ="DOUBLE_TAP";
-                        #binding-cells = <2>;
+                        #binding-cells = <0as>;
                         tapping-term-ms = <200>;
                         bindings = <&kp>, <&kp>;
                 };   
