@@ -74,13 +74,20 @@
                         tapping-term-ms = <200>;
                         bindings = <&th DOT SPACE>, <&th QMARK COMMA>;
                 };
-                dt: double_tap {
+                dtca: double_tap_ctl_alt {
                         compatible = "zmk,behavior-tap-dance";
-                        label ="DOUBLE_TAP";
+                        label ="DOUBLE_TAP_CTL_ALT";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&kp>, <&kp>;
-                };   
+                        bindings = <&kp LCTRL>, <&kp LALT>;
+                };
+                dtgh: double_tap_hyper_gui {
+                        compatible = "zmk,behavior-tap-dance";
+                        label ="DOUBLE_TAP_GUI_HYPER";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp LGUI>, <&kp HYPR>;
+                };
                 tdlyr: tap_dance_layers {
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_LAYERS";
@@ -103,7 +110,7 @@
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B /**/ &kp J &kp L &kp U     &kp Y   &th COLON SEMI  &tdm
    &kp BSPC    &kp A &kp R &kp S &kp T &kp G /**/ &kp M &kp N &kp E     &kp I   &kp O           &th DQT SQT
    &sftcps     &kp Z &kp X &kp C &kp D &kp V /**/ &kp K &kp H &kp COMMA &kp DOT &th QMARK FSLH  &lt NUMBERS DEL
-               &dt HYPR LGUI &kp LCTL &lt SYMBOLS RET /**/ &lt NAVI SPACE   &dt LCTL LALT     &tdlyr 
+               &dtgh &kp LCTL &lt SYMBOLS RET /**/ &lt NAVI SPACE   &dtca     &tdlyr 
                         >;
                 };
 
@@ -145,7 +152,7 @@
    &trans  &kp K_BACK &kp K_FORWARD &kp LC(F)  &kp LC(P) &trans      /**/ &trans   &kp LC(LEFT) &kp UP    &kp LC(RIGHT) &trans  &trans
    &kp DEL &kp LCTL   &kp LGUI      &kp LALT   &kp LSFT  &kp LC(L)   /**/ &kp HOME &kp LEFT     &kp DOWN  &kp RIGHT     &kp END &kp RET
    &trans  &kp K_UNDO &kp K_CUT     &kp K_COPY &kp LC(D) &kp K_PASTE /**/ &trans   &kp PG_UP    &kp PG_DN &trans        &trans  &trans
-                          	    &trans     &trans    &trans      /**/ &trans   &dt DEFAULT LALT &trans
+                          	    &trans     &trans    &trans      /**/ &trans   &tlhk DEFAULT LALT &trans
                         >;
                 };
 
@@ -159,7 +166,7 @@
    &trans &trans &trans &trans &trans &trans /**/ &kp C_AL_CALC &kp N7  &kp N8  &kp N9  &kp DOT   &trans
    &trans &trans &trans &trans &trans &trans /**/ &kp SLASH     &kp N4  &kp N5  &kp N6  &kp MINUS &kp TAB
    &trans &trans &trans &trans &trans &trans /**/ &kp STAR      &kp N1  &kp N2  &kp N3  &kp PLUS  &kp BSPC
-                        &trans &trans &trans /**/ &trans        &dt DEFAULT LALT    &kp N0
+                        &trans &trans &trans /**/ &trans        &tlhk DEFAULT LALT    &kp N0
                         >;
                 };
 
@@ -187,7 +194,7 @@
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B /**/ &kp J &kp L &kp U     &kp Y      &kp SEMI &tdm
    &kp BSPC    &kp A &kp R &kp S &kp T &kp G /**/ &kp M &kp N &kp E     &kp I      &kp O    &kp C_VOL_UP
    &kp LSHFT   &kp Z &kp X &kp C &kp D &kp V /**/ &kp K &kp H &kp COMMA &kp DOT    &kp FSLH &kp C_VOL_DN
-   &lt SYMBOLS RET   &kp LCTL    &kp SPACE   /**/ &lt NAVI SPACE        &dt DEFAULT LALT            &kp RALT
+   &lt SYMBOLS RET   &kp LCTL    &kp SPACE   /**/ &lt NAVI SPACE        &tlhk DEFAULT LALT  &kp RALT
                         >;
                 };
         };
