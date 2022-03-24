@@ -74,6 +74,20 @@
                         tapping-term-ms = <200>;
                         bindings = <&th DOT SPACE>, <&th QMARK COMMA>;
                 };
+                tdgh: tap_dance_gui_hyper {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_GUI_HYPER";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp LGUI>, <&kp HYPR>;
+                };
+                tdaca: tap_dance_alt_ctrl {
+                        compatible = "zmk,behavior-tap-dance";
+                        label = "TAP_DANCE_ALT_CTRL";
+                        #binding-cells = <0>;
+                        tapping-term-ms = <200>;
+                        bindings = <&kp LALT>, <&kp LCTRL>;
+                };
                 tdlyr: tap_dance_layers {
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_LAYERS";
@@ -96,7 +110,7 @@
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B /**/ &kp J &kp L &kp U     &kp Y   &th COLON SEMI  &tdm
    &kp BSPC    &kp A &kp R &kp S &kp T &kp G /**/ &kp M &kp N &kp E     &kp I   &kp O           &th DQT SQT
    &sftcps     &kp Z &kp X &kp C &kp D &kp V /**/ &kp K &kp H &kp COMMA &kp DOT &th QMARK FSLH  &lt NUMBERS DEL
-        &kp HYPR   &kp LCTL &lt SYMBOLS RET  /**/ &lt NAVI SPACE   &kp LALT      &tdlyr 
+               &tdgh &kp LCTL &lt SYMBOLS RET /**/ &lt NAVI SPACE   &tdac      &tdlyr 
                         >;
                 };
 
