@@ -121,9 +121,9 @@
 // |     |  <  |  >  |  {  |  }  |  .  |\__/|  _  |  ~  |  +  |  _  |  \  |   |
 //                   | HYPR|     | ENT |\__/| SPC |     | ALT |
                         bindings = <
-   &trans  &kp EXCL      &kp AT           &kp HASH &kp DLLR &kp PRCNT /**/ &kp CARET &kp AMPS      &kp KP_MULTIPLY &kp LPAR       &kp RPAR       &trans
-   &kp DEL &kp LBKT      &kp RBKT         &kp LPAR &kp RPAR &kp GRAVE /**/ &kp PIPE  &kp LBRC &kp RBRC   &kp MINUS &kp EQUAL &kp GRAVE
-   &trans  &kp LESS_THAN &kp GREATER_THAN &kp LBRC &kp RBRC &tdsdcq   /**/ &kp UNDER &kp TILDE     &kp PLUS        &kp UNDER      &kp BSLH       &trans
+   &trans  &kp EXCL      &kp AT           &kp HASH &kp DLLR &kp PRCNT /**/ &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &trans
+   &kp DEL &kp LBKT      &kp RBKT         &kp LPAR &kp RPAR &kp GRAVE /**/ &kp PIPE  &kp LBRC  &kp RBRC        &kp MINUS &kp EQUAL &kp GRAVE
+   &trans  &kp LESS_THAN &kp GREATER_THAN &kp LBRC &kp RBRC &tdsdcq   /**/ &kp UNDER &kp TILDE &kp PLUS        &kp UNDER &kp BSLH  &trans
                     	                  &trans   &trans   &trans    /**/ &trans    &tlhk LALT DEFAULT            &trans
                         >;
                 };
@@ -135,10 +135,10 @@
 // | SHFT | F11 | F12 |     |     |     |\__/|     |     |     |     |     |    |
 //                    | HYPR|     | ENT |\__/| SPC |     | ALT |
                         bindings = <
-   &trans &kp F1      &kp F2      &kp F3      &kp F4      &kp F5 /**/ &kp F6 &kp F7      &kp F8      &kp F9      &kp F10     &trans
-   &trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 /**/ &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
-   &trans &kp F11     &kp F12     &trans      &trans      &trans /**/ &trans &trans      &trans      &trans      &trans      &trans
-                                  &trans      &trans      &trans /**/ &trans &tlhk LALT DEFAULT      &trans
+   &trans &kp F1  &kp F2  &kp F3 &kp F4 &kp F5 /**/ &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &trans
+   &trans &kp N1  &kp N2  &kp N3 &kp N4 &kp N5 /**/ &kp N6 &kp N7 &kp N8 &kp N9 &kp N0  &trans
+   &trans &kp F11 &kp F12 &trans &trans &trans /**/ &trans &trans &trans &trans &trans  &trans
+                          &trans &trans &trans /**/ &trans &tlhk LALT DEFAULT   &trans
                         >;
                 };
 
@@ -163,10 +163,10 @@
 // | SHFT | F11 | F12 |     |     |     |\__/|  *   |  1  |  2  |  3  |  +  | BSPC |
 //                    | HYPR|     | ENT |\__/| SPC  | LWR |  0  |
                         bindings = <
-   &trans &trans &trans &trans &trans &trans /**/ &kp C_AL_CALC &kp N7  &kp N8  &kp N9  &kp DOT   &trans
-   &trans &trans &trans &trans &trans &trans /**/ &kp SLASH     &kp N4  &kp N5  &kp N6  &kp MINUS &kp TAB
-   &trans &trans &trans &trans &trans &trans /**/ &kp STAR      &kp N1  &kp N2  &kp N3  &kp PLUS  &kp BSPC
-                        &trans &trans &trans /**/ &trans        &tlhk LALT DEFAULT      &kp N0
+   &trans &trans &trans &trans &trans &trans /**/ &kp SLASH &kp N7  &kp N8  &kp N9  &kp MINUS &trans
+   &trans &trans &trans &trans &trans &trans /**/ &kp STAR  &kp N4  &kp N5  &kp N6  &kp PLUS  &kp TAB
+   &trans &trans &trans &trans &trans &trans /**/ &kp ENTER &kp N1  &kp N2  &kp N3  &kp DOT   &kp BSPC
+                        &trans &trans &trans /**/ &trans    &tlhk LALT DEFAULT      &kp N0
                         >;
                 };
 
