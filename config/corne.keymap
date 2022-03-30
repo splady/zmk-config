@@ -23,7 +23,7 @@
 #define BT4     BT_SEL 4
 
 #define HYPR    LC(LG(LALT))
-#define AUDOUT  LW(LA(LC(F11))) //used to swap audio output using SoundSwitch on Windows
+#define AUDOUT  LG(LA(LC(F11))) //used to swap audio output using SoundSwitch on Windows
 
 / {
         behaviors {
