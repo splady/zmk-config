@@ -22,8 +22,8 @@
 #define BT3     BT_SEL 3
 #define BT4     BT_SEL 4
 
-#define HYPR    LC(LG(LALT))
-#define AUDOUT  LG(LA(LC(F11))) //used to swap audio output using SoundSwitch on Windows
+#define JUMP    LC(LG(LALT))    // used in auto hotkey to lauch apps and a few other utilities
+#define AUDOUT  LG(LA(LC(F11))) // used to swap audio output using SoundSwitch on Windows
 
 / {
         behaviors {
@@ -81,12 +81,12 @@
                         tapping-term-ms = <200>;
                         bindings = <&kp LALT>, <&kp LCTRL>;
                 };
-                dtgh: double_tap_hyper_gui {
+                dtgh: double_tap_jump_gui {
                         compatible = "zmk,behavior-tap-dance";
-                        label ="DOUBLE_TAP_GUI_HYPER";
+                        label ="DOUBLE_TAP_GUI_JUMP";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&kp LGUI>, <&kp HYPR>;
+                        bindings = <&kp LGUI>, <&kp JUMP>;
                 };
                 tdlyr: tap_dance_layers {
                         compatible = "zmk,behavior-tap-dance";
@@ -105,7 +105,7 @@
 // | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L  |  U  |  Y  | ; : | Media |
 // | BSPC |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N  |  E  |  I  |  O  | '  "  |
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H  |  ,  |  .  | / ? | Nums  |  
-//                    | HYPR| CTL | ENT |\__/| SPC | ALT | RSE |
+//                    | JUMP| CTL | ENT |\__/| SPC | ALT | RSE |
                         bindings = <
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B  /**/ &kp J &kp L &kp U     &kp Y   &th COLON SEMI  &tdm
    &kp BSPC    &kp A &kp R &kp S &kp T &kp G  /**/ &kp M &kp N &kp E     &kp I   &kp O           &th DQT SQT
@@ -119,7 +119,7 @@
 // |     |  !  |  @  |  #  |  $  |  %  |\__/|  ^  |  &  |  *  |  (  |  )  |   |
 // | DEL |  [  |  ]  |  (  |  )  |  `  |\__/| "|" |  {  |  }  |  -  |  =  | ` |
 // |     |  <  |  >  |  {  |  }  |  .  |\__/|  _  |  ~  |  +  |  _  |  \  |   |
-//                   | HYPR|     | ENT |\__/| SPC | ALT |     |
+//                   | JUMP|     | ENT |\__/| SPC | ALT |     |
                         bindings = <
    &trans  &kp EXCL      &kp AT           &kp HASH &kp DLLR &kp PRCNT /**/ &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &trans
    &kp DEL &kp LBKT      &kp RBKT         &kp LPAR &kp RPAR &kp GRAVE /**/ &kp PIPE  &kp LBRC  &kp RBRC        &kp MINUS &kp EQUAL &kp GRAVE
@@ -133,7 +133,7 @@
 // | TAB  |  F1 |  F2 |  F3 |  F4 |  F5 |\__/|  F6 |  F7 |  F8 |  F9 | F10 |    |
 // | BSPC |  1  |  2  |  3  |  4  |  5  |\__/|  6  |  7  |  8  |  9  |  0  |    |
 // | SHFT | F11 | F12 |     |     |     |\__/|     |     |     |     |     |    |
-//                    | HYPR|     | ENT |\__/| SPC | ALT |     |
+//                    | JUMP|     | ENT |\__/| SPC | ALT |     |
                         bindings = <
    &trans &kp F1  &kp F2  &kp F3 &kp F4 &kp F5 /**/ &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &trans
    &trans &kp N1  &kp N2  &kp N3 &kp N4 &kp N5 /**/ &kp N6 &kp N7 &kp N8 &kp N9 &kp N0  &trans
@@ -149,10 +149,10 @@
 // |     |      |      |     |     |     |\__/|      | PG_UP  | PG_DN|        |     |    |
 //                     |     |     |     |\__/|      |        |      |
                         bindings = <
-   &trans  &kp K_BACK &kp K_FORWARD &kp LC(F)  &kp LC(P) &trans      /**/ &trans   &kp LC(LEFT) &kp UP    &kp LC(RIGHT) &trans  &trans
-   &kp DEL &kp LCTL   &kp LGUI      &kp LALT   &kp LSFT  &kp LC(L)   /**/ &kp HOME &kp LEFT     &kp DOWN  &kp RIGHT     &kp END &kp RET
-   &trans  &kp K_UNDO &kp K_CUT     &kp K_COPY &kp LC(D) &kp K_PASTE /**/ &trans   &kp PG_UP    &kp PG_DN &trans        &trans  &trans
-                          	    &trans     &trans    &trans      /**/ &trans   &tlhk LALT DEFAULT &trans
+   &trans  &kp LC(Q)  &kp LC(W) &kp LC(F)  &kp LC(P) &trans    /**/ &trans    &kp LC(LEFT) &kp UP    &kp LC(RIGHT) &trans  &trans
+   &kp DEL &kp LCTL   &kp LGUI  &kp LALT   &kp LSFT  &kp LC(L) /**/ &kp HOME  &kp LEFT     &kp DOWN  &kp RIGHT     &kp END &kp RET
+   &trans  &kp LC(Z)  &kp LC(X) &kp LC(C)  &kp LC(D) &kp LC(V) /**/ &kp LC(K) &kp PG_UP    &kp PG_DN &none         &none   &trans
+                                &trans     &trans    &trans    /**/ &trans    &tlhk LALT DEFAULT &trans
                         >;
                 };
 
@@ -161,7 +161,7 @@
 // | TAB  |  F1 |  F2 |  F3 |  F4 |  F5 |\__/| CALC |  7  |  8  |  9  |  .  |      |
 // | BSPC |  1  |  2  |  3  |  4  |  5  |\__/|  /   |  4  |  5  |  6  |  -  | TAB  |
 // | SHFT | F11 | F12 |     |     |     |\__/|  *   |  1  |  2  |  3  |  +  | BSPC |
-//                    | HYPR|     | ENT |\__/| SPC  | LWR |  0  |
+//                    | JUMP|     | ENT |\__/| SPC  | LWR |  0  |
                         bindings = <
    &trans &trans &trans &trans &trans &trans /**/ &kp SLASH &kp N7  &kp N8  &kp N9  &kp MINUS &trans
    &trans &trans &trans &trans &trans &trans /**/ &kp STAR  &kp N4  &kp N5  &kp N6  &kp PLUS  &kp TAB
@@ -189,7 +189,7 @@
 // | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L   |  U  |  Y  |  ;  | Media  |
 // | BSPC |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N   |  E  |  I  |  O  | VOL_UP |
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H   |  ,  |  .  |  /  | VOL_DN |  
-//                    | HYPR| LWR | ENT |\__/| SPC | LWR  | ALT |
+//                    | JUMP| LWR | ENT |\__/| SPC | LWR  | ALT |
                         bindings = <
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B /**/ &kp J &kp L &kp U     &kp Y      &kp SEMI &tdm
    &kp BSPC    &kp A &kp R &kp S &kp T &kp G /**/ &kp M &kp N &kp E     &kp I      &kp O    &kp C_VOL_UP
