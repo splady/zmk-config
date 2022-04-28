@@ -149,10 +149,10 @@
 // |     |      |      |     |     |     |\__/|      | PG_UP  | PG_DN|        |     |    |
 //                     |     |     |     |\__/|      |        |      |
                         bindings = <
-   &trans  &kp LC(Q)  &kp LC(W) &kp LC(F)  &kp LC(P) &trans    /**/ &trans    &kp LC(LEFT) &kp UP    &kp LC(RIGHT) &trans  &trans
-   &kp DEL &kp LCTL   &kp LGUI  &kp LALT   &kp LSFT  &kp LC(L) /**/ &kp HOME  &kp LEFT     &kp DOWN  &kp RIGHT     &kp END &kp RET
-   &trans  &kp LC(Z)  &kp LC(X) &kp LC(C)  &kp LC(D) &kp LC(V) /**/ &kp LC(K) &kp PG_UP    &kp PG_DN &none         &none   &trans
-                                &trans     &trans    &trans    /**/ &trans    &tlhk LALT DEFAULT &trans
+   &trans  &kp LC(Q) &kp LC(W) &kp LC(F) &kp LC(P) &trans    /**/ &kp LA(LEFT) &kp LC(LEFT) &kp UP    &kp LC(RIGHT) &kp LA(RIGHT) &trans
+   &kp DEL &kp LCTL  &kp LGUI  &kp LALT  &kp LSFT  &kp LC(L) /**/ &kp HOME     &kp LEFT     &kp DOWN  &kp RIGHT     &kp END       &kp RET
+   &trans  &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(D) &kp LC(V) /**/ &kp LC(K)    &kp PG_UP    &kp PG_DN &none         &none         &trans
+                               &trans    &trans    &trans    /**/ &trans       &tlhk LALT DEFAULT     &trans
                         >;
                 };
 
@@ -180,7 +180,7 @@
    &kp C_SLEEP_MODE &trans  &trans  &trans  &trans  &trans  /**/ &trans   &trans   &trans     &trans     &kp C_MUTE &trans
    &bt BT_CLR       &bt BT0 &bt BT1 &bt BT2 &bt BT3 &bt BT4 /**/ &kp LEFT &kp DOWN &kp UP     &kp RIGHT  &kp AUDOUT &kp C_VOL_UP
    &trans           &trans  &trans  &trans  &trans  &trans  /**/ &trans   &trans   &kp C_PREV &kp C_NEXT &trans     &kp C_VOL_DN
-                                    &trans  &trans  &trans  /**/ &trans   &trans   &trans
+                                    &trans  &trans  &trans  /**/ &trans   &tlhk LALT DEFAULT  &trans
                         >;
                 };
 
