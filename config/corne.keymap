@@ -173,13 +173,13 @@
                 media_layer {
 // -----------------------------------------------------------------------------------------
 // | SLEEP |     |     |     |     |     |\__/|     |     |      |      | MUTE |        |
-// | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |\__/| LFT | DWN |  UP  | RGT  |      | VOL_UP |
+// | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |\__/| LFT | DWN |  UP  | RGT  |AUDOUT| VOL_UP |
 // |       |     |     |     |     |     |\__/|     |     | PREV | NEXT |      | VOL_DN |
 //                     |     |     |     |\__/|     |     |      |
                         bindings = <
-   &kp C_SLEEP_MODE &trans  &trans  &trans  &trans  &trans  /**/ &trans   &trans   &trans     &trans     &kp C_MUTE &trans
-   &bt BT_CLR       &bt BT0 &bt BT1 &bt BT2 &bt BT3 &bt BT4 /**/ &kp LEFT &kp DOWN &kp UP     &kp RIGHT  &kp AUDOUT &kp C_VOL_UP
-   &trans           &trans  &trans  &trans  &trans  &trans  /**/ &trans   &trans   &kp C_PREV &kp C_NEXT &trans     &kp C_VOL_DN
+   &none      &none   &none   &none   &none   &none   /**/ &none &none &none      &none      &kp C_MUTE &trans
+   &bt BT_CLR &bt BT0 &bt BT1 &bt BT2 &bt BT3 &bt BT4 /**/ &none &none &none      &none      &kp AUDOUT &kp C_VOL_UP
+   &none      &none   &none   &none   &none   &none   /**/ &none &none &kp C_PREV &kp C_NEXT &none      &kp C_VOL_DN
                               &none   &none   &none   /**/ &none &tlhk LALT DEFAULT          &to GAMING
                         >;
                 };
