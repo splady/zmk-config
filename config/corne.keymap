@@ -180,21 +180,21 @@
    &kp C_SLEEP_MODE &trans  &trans  &trans  &trans  &trans  /**/ &trans   &trans   &trans     &trans     &kp C_MUTE &trans
    &bt BT_CLR       &bt BT0 &bt BT1 &bt BT2 &bt BT3 &bt BT4 /**/ &kp LEFT &kp DOWN &kp UP     &kp RIGHT  &kp AUDOUT &kp C_VOL_UP
    &trans           &trans  &trans  &trans  &trans  &trans  /**/ &trans   &trans   &kp C_PREV &kp C_NEXT &trans     &kp C_VOL_DN
-                                    &trans  &trans  &trans  /**/ &trans   &tlhk LALT DEFAULT  &trans
+                              &none   &none   &none   /**/ &none &tlhk LALT DEFAULT          &to GAMING
                         >;
                 };
 
                 gaming_layer {
 // -----------------------------------------------------------------------------------------
-// | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L   |  U  |  Y  |  ;  | Media  |
-// | BSPC |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N   |  E  |  I  |  O  | VOL_UP |
-// | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H   |  ,  |  .  |  /  | VOL_DN |  
-//                    | JUMP| LWR | ENT |\__/| SPC | LWR  | ALT |
+// | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L   |  U  |  Y  |  ;  | Media |
+// | BSPC |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N   |  E  |  I  |  O  |   '   |
+// | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H   |  ,  |  .  |  /  | Nums  |  
+//                    | JUMP| CTL | ENT |\__/| SPC | LWR  | ALT |
                         bindings = <
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B /**/ &kp J &kp L &kp U     &kp Y      &kp SEMI &tdm
-   &kp BSPC    &kp A &kp R &kp S &kp T &kp G /**/ &kp M &kp N &kp E     &kp I      &kp O    &kp C_VOL_UP
-   &kp LSHFT   &kp Z &kp X &kp C &kp D &kp V /**/ &kp K &kp H &kp COMMA &kp DOT    &kp FSLH &kp C_VOL_DN
-   &lt SYMBOLS RET   &kp LCTL    &kp SPACE   /**/ &lt NAVI SPACE        &tlhk LALT DEFAULT  &kp RALT
+   &kp BSPC    &kp A &kp R &kp S &kp T &kp G /**/ &kp M &kp N &kp E     &kp I      &kp O    &kp SQT
+   &kp LSHFT   &kp Z &kp X &kp C &kp D &kp V /**/ &kp K &kp H &kp COMMA &kp DOT    &kp FSLH &lt NUMBERS DEL
+               &kp RET  &kp LCTL &kp SPACE   /**/ &lt NAVI SPACE        &tlhk LALT DEFAULT  &kp RALT
                         >;
                 };
         };
