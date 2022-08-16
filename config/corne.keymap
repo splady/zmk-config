@@ -10,6 +10,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT 0
 #define SYMBOLS 1
@@ -175,15 +176,16 @@
 
                 media_layer {
 // -----------------------------------------------------------------------------------------
-// | SLEEP |     |     |     |     |     |\__/|     |     |      |      | MUTE |        |
+// the USB and BLE keys set the prefered output method. 
+// |       | USB |     |     |     | BLE |\__/|     |     |      |      | MUTE |        |
 // | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |\__/| LFT | DWN |  UP  | RGT  |AUDOUT| VOL_UP |
 // |       |     |     |     |     |     |\__/|     |     | PREV | NEXT |      | VOL_DN |
 //                     |     |     |     |\__/|     |     |      |
                         bindings = <
-   &none      &none   &none   &none   &none   &none   /**/ &none &none &none      &none      &kp C_MUTE &trans
-   &bt BT_CLR &bt BT0 &bt BT1 &bt BT2 &bt BT3 &bt BT4 /**/ &none &none &none      &none      &kp AUDOUT &kp C_VOL_UP
-   &none      &none   &none   &none   &none   &none   /**/ &none &none &kp C_PREV &kp C_NEXT &none      &kp C_VOL_DN
-                              &none   &none   &none   /**/ &none &tlhk LALT DEFAULT          &to GAMING
+   &none      &none   &out OUT_USB &none   &none   &out OUT_BLE /**/ &none &none &none      &none      &kp C_MUTE &trans
+   &bt BT_CLR &bt BT0 &bt BT1      &bt BT2 &bt BT3 &bt BT4      /**/ &none &none &none      &none      &kp AUDOUT &kp C_VOL_UP
+   &none      &none   &none        &none   &none   &none        /**/ &none &none &kp C_PREV &kp C_NEXT &none      &kp C_VOL_DN
+                                   &none   &none   &none        /**/ &none &tlhk LALT DEFAULT          &to GAMING
                         >;
                 };
 
