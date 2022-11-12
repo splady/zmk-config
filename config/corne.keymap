@@ -27,7 +27,7 @@
 #define BT4     BT_SEL 4
 
 #define JUMP    LC(LG(LALT))    // used in auto hotkey to lauch apps and a few other utilities
-#define AUDOUT  LG(LA(LC(F11))) // used to swap audio output using SoundSwitch on Windows
+#define AUDOUT  LC(LG(LA(F11))) // used to swap audio output using SoundSwitch on Windows
 
 / {
         behaviors {
@@ -78,19 +78,19 @@
                         tapping-term-ms = <200>;
                         bindings = <&th DOT SPACE>, <&th QMARK COMMA>;
                 };
-                dtac: double_tap_alt_ctl {
+                dtag: double_tap_alt_gui {
                         compatible = "zmk,behavior-tap-dance";
-                        label ="DOUBLE_TAP_ALT_CTL";
+                        label ="DOUBLE_TAP_ALT_GUI";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&kp LALT>, <&kp LCTRL>;
+                        bindings = <&kp LALT>, <&kp LGUI>;
                 };
-                dtgh: double_tap_jump_gui {
+                dtcj: double_tap_ctl_jump {
                         compatible = "zmk,behavior-tap-dance";
-                        label ="DOUBLE_TAP_GUI_JUMP";
+                        label ="DOUBLE_TAP_CTL_JUMP";
                         #binding-cells = <0>;
                         tapping-term-ms = <200>;
-                        bindings = <&kp LGUI>, <&kp JUMP>;
+                        bindings = <&kp LCTRL>, <&kp JUMP>;
                 };
                 tdlyr: tap_dance_layers {
                         compatible = "zmk,behavior-tap-dance";
@@ -109,12 +109,12 @@
 // | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L  |  U  |  Y  | ; : | Media |
 // | BSPC |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N  |  E  |  I  |  O  | '  "  |
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H  |  ,  |  .  | / ? | Nums  |  
-//                    | JUMP| CTL | ENT |\__/| SPC | ALT | RSE |
+//                    | JUMP| GUI | ENT |\__/| SPC | ALT | RSE |
                         bindings = <
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B  /**/ &kp J &kp L &kp U     &kp Y   &th COLON SEMI  &tdm
    &kp BSPC    &kp A &kp R &kp S &kp T &kp G  /**/ &kp M &kp N &kp E     &kp I   &kp O           &th DQT SQT
    &sftcps     &kp Z &kp X &kp C &kp D &kp V  /**/ &kp K &kp H &kp COMMA &kp DOT &th QMARK FSLH  &lt NUMBERS DEL
-               &dtgh &kp LCTL &lt SYMBOLS RET /**/ &lt NAVI SPACE   &dtac     &tdlyr 
+               &dtcj &kp LGUI &lt SYMBOLS RET /**/ &lt NAVI SPACE   &dtag     &tdlyr 
                         >;
                 };
 
@@ -148,14 +148,14 @@
 
                 navigation_layer {
 // -----------------------------------------------------------------------------------------
-// |     | back | fwrd |     |     |     |\__/|      | c(LFT) | UP   | c(RGT) |     |    |
-// | DEL |  CTL | GUI  | ALT | SFT |     |\__/| HOME | LFT    | DWN  | RGT    | END |    |
+// |     | back | fwrd |     |     |     |\__/|      | a(LFT) | UP   | a(RGT) |     |    |
+// | DEL |  CTL | ALT  | GUI | SFT |     |\__/| HOME | LFT    | DWN  | RGT    | END |    |
 // |     |      |      |     |     |     |\__/|      | PG_UP  | PG_DN|        |     |    |
 //                     |     |     |     |\__/|      |        |      |
                         bindings = <
-   &trans  &kp LC(Q) &kp LC(W) &kp LC(F) &kp LC(P) &trans    /**/ &kp LA(LEFT) &kp LC(LEFT) &kp UP    &kp LC(RIGHT) &kp LA(RIGHT) &trans
-   &kp DEL &kp LCTL  &kp LGUI  &kp LALT  &kp LSFT  &kp LC(L) /**/ &kp HOME     &kp LEFT     &kp DOWN  &kp RIGHT     &kp END       &kp RET
-   &trans  &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(D) &kp LC(V) /**/ &kp LC(K)    &kp PG_UP    &kp PG_DN &none         &none         &trans
+   &trans  &kp LC(Q) &kp LC(W) &kp LC(F) &kp LC(P) &trans    /**/ &kp LA(BSPC) &kp LA(LEFT) &kp UP    &kp LA(RIGHT) &kp LA(DEL) &trans
+   &kp DEL &kp LCTL  &kp LALT  &kp LGUI  &kp LSFT  &kp LC(L) /**/ &kp HOME     &kp LEFT     &kp DOWN  &kp RIGHT     &kp END     &kp RET
+   &trans  &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(D) &kp LC(V) /**/ &kp LC(K)    &kp LG(LBKT) &kp PG_DN &kp LG(RBKT)  &none       &trans
                                &trans    &trans    &trans    /**/ &trans       &tlhk LALT DEFAULT     &trans
                         >;
                 };
@@ -176,7 +176,7 @@
 
                 media_layer {
 // -----------------------------------------------------------------------------------------
-// the USB and BLE keys set the prefered output method. 
+// the USB and BLE keys set the prefered output method when a usb cable is plugged in. 
 // |       | USB |     |     |     | BLE |\__/|     |     |      |      | MUTE |        |
 // | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |\__/| LFT | DWN |  UP  | RGT  |AUDOUT| VOL_UP |
 // |       |     |     |     |     |     |\__/|     |     | PREV | NEXT |      | VOL_DN |
@@ -194,12 +194,12 @@
 // | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L   |  U  |  Y  |  ;  | Media |
 // | BSPC |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N   |  E  |  I  |  O  |   '   |
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H   |  ,  |  .  |  /  | Nums  |  
-//                    | JUMP| CTL | ENT |\__/| SPC | LWR  | ALT |
+//                    | RET | GUI | ENT |\__/| SPC | LWR  | ALT |
                         bindings = <
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B /**/ &kp J &kp L &kp U     &kp Y      &kp SEMI &tdm
    &kp BSPC    &kp A &kp R &kp S &kp T &kp G /**/ &kp M &kp N &kp E     &kp I      &kp O    &kp SQT
    &kp LSHFT   &kp Z &kp X &kp C &kp D &kp V /**/ &kp K &kp H &kp COMMA &kp DOT    &kp FSLH &lt NUMBERS DEL
-               &kp RET  &kp LCTL &kp SPACE   /**/ &lt NAVI SPACE        &tlhk LALT DEFAULT  &kp RALT
+               &kp RET  &kp LGUI &kp SPACE   /**/ &lt NAVI SPACE        &tlhk LALT DEFAULT  &kp RALT
                         >;
                 };
         };
