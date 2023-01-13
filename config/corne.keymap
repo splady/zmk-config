@@ -27,7 +27,8 @@
 #define BT4     BT_SEL 4
 
 #define JUMP    LC(LG(LALT))    // used in auto hotkey to lauch apps and a few other utilities
-#define AUDOUT  LC(LG(LA(F11))) // used to swap audio output using SoundSwitch on Windows
+#define AUDOUT  LC(LG(LA(F11))) // used to swap audio output using SoundSwitch on Windows, 
+#define AUDIN   LC(LG(LA(F7))) // used to swap audio input using SoundSwitch on Windows, 
 
 / {
         behaviors {
@@ -154,7 +155,7 @@
 //                     |     |     |     |\__/|      |        |      |
                         bindings = <
    &trans  &kp LC(Q) &kp LC(W) &kp LC(F) &kp LC(P) &trans    /**/ &kp LA(BSPC) &kp LA(LEFT) &kp UP    &kp LA(RIGHT) &kp LA(DEL) &trans
-   &kp DEL &kp LCTL  &kp LALT  &kp LGUI  &kp LSFT  &kp LC(L) /**/ &kp HOME     &kp LEFT     &kp DOWN  &kp RIGHT     &kp END     &kp RET
+   &kp DEL &kp LCTL  &kp LALT  &kp LGUI  &kp LSFT  &kp LC(L) /**/ &kp LC(A)    &kp LEFT     &kp DOWN  &kp RIGHT     &kp LC(E)     &kp RET
    &trans  &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(D) &kp LC(V) /**/ &kp LC(K)    &kp LG(LBKT) &kp PG_DN &kp LG(RBKT)  &none       &trans
                                &trans    &trans    &trans    /**/ &trans       &tlhk LALT DEFAULT     &trans
                         >;
@@ -177,14 +178,14 @@
                 media_layer {
 // -----------------------------------------------------------------------------------------
 // the USB and BLE keys set the prefered output method when a usb cable is plugged in. 
-// |       | USB |     |     |     | BLE |\__/|     |     |      |      | MUTE |        |
-// | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |\__/| LFT | DWN |  UP  | RGT  |AUDOUT| VOL_UP |
-// |       |     |     |     |     |     |\__/|     |     | PREV | NEXT |      | VOL_DN |
+// |       | USB |     |     |     | BLE |\__/|     |     |      |      |   MUTE |        |
+// | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |\__/| LFT | DWN |  UP  | RGT  | AUDOUT | VOL_UP |
+// |       |     |     |     |     |     |\__/|     |     | PREV | NEXT | AUDIN  | VOL_DN |
 //                     |     |     |     |\__/|     |     |      |
                         bindings = <
    &none      &none   &out OUT_USB &none   &none   &out OUT_BLE /**/ &none &none &none      &none      &kp C_MUTE &trans
    &bt BT_CLR &bt BT0 &bt BT1      &bt BT2 &bt BT3 &bt BT4      /**/ &none &none &none      &none      &kp AUDOUT &kp C_VOL_UP
-   &none      &none   &none        &none   &none   &none        /**/ &none &none &kp C_PREV &kp C_NEXT &none      &kp C_VOL_DN
+   &none      &none   &none        &none   &none   &none        /**/ &none &none &kp C_PREV &kp C_NEXT &kp AUDIN      &kp C_VOL_DN
                                    &none   &none   &none        /**/ &none &tlhk LALT DEFAULT          &to GAMING
                         >;
                 };
