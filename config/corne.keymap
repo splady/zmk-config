@@ -107,14 +107,14 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L  |  U  |  Y  | ; : | Media |
+// | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L  |  U  |  Y  |  ;  | Media |
 // | BSPC |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N  |  E  |  I  |  O  |   '   |
-// | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H  |  ,  |  .  | / ? | Nums  |  
+// | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H  |  ,  |  .  |  /  | Nums  |  
 //                    | JUMP| GUI | ENT |\__/| SPC | ALT | RSE |
                         bindings = <
-   &th ESC TAB &kp Q &kp W &kp F &kp P &kp B  /**/ &kp J &kp L &kp U     &kp Y   &th COLON SEMI  &tdm
-   &kp BSPC    &kp A &kp R &kp S &kp T &kp G  /**/ &kp M &kp N &kp E     &kp I   &kp O           &kp SQT
-   &sftcps     &kp Z &kp X &kp C &kp D &kp V  /**/ &kp K &kp H &kp COMMA &kp DOT &th QMARK FSLH  &lt NUMBERS DEL
+   &th ESC TAB &kp Q &kp W &kp F &kp P &kp B  /**/ &kp J &kp L &kp U     &kp Y   &kp SEMI &tdm
+   &kp BSPC    &kp A &kp R &kp S &kp T &kp G  /**/ &kp M &kp N &kp E     &kp I   &kp O    &kp SQT
+   &sftcps     &kp Z &kp X &kp C &kp D &kp V  /**/ &kp K &kp H &kp COMMA &kp DOT &kp FSLH &mo NUMBERS
                &dtcj &kp LGUI &lt SYMBOLS RET /**/ &lt NAVI SPACE   &dtag     &tdlyr 
                         >;
                 };
@@ -149,14 +149,14 @@
 
                 navigation_layer {
 // -----------------------------------------------------------------------------------------
-// |     | back | fwrd |     |     |     |\__/|      | a(LFT) | UP   | a(RGT) |     |    |
-// | DEL |  CTL | ALT  | GUI | SFT |     |\__/| HOME | LFT    | DWN  | RGT    | END |    |
-// |     |      |      |     |     |     |\__/|      | PG_UP  | PG_DN|        |     |    |
-//                     |     |     |     |\__/|      |        |      |
+// |     | <-Tab | ->Tab | back | fwrd |     |\__/|      | a(LFT) | UP   | a(RGT) |     |    |
+// | DEL |  CTL  | ALT   | GUI  | SFT  |     |\__/| HOME | LFT    | DWN  | RGT    | END |    |
+// |     |       |       |      |      |     |\__/|      | PG_UP  | PG_DN|        |     |    |
+//                       |      |      |     |\__/|      |        |      |
                         bindings = <
-   &trans  &kp LC(Q) &kp LC(W) &kp LC(F) &kp LC(P) &trans    /**/ &kp LA(BSPC) &kp LA(LEFT) &kp UP    &kp LA(RIGHT) &kp LA(DEL) &trans
-   &kp DEL &kp LCTL  &kp LALT  &kp LGUI  &kp LSFT  &kp LC(L) /**/ &kp LC(A)    &kp LEFT     &kp DOWN  &kp RIGHT     &kp LC(E)     &kp RET
-   &trans  &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(D) &kp LC(V) /**/ &kp LC(K)    &kp LG(LBKT) &kp PG_DN &kp LG(RBKT)  &none       &trans
+   &trans  &kp LS(LC(TAB)) &kp LC(TAB) &kp LG(LBKT) &kp LG(RBKT) &trans    /**/ &kp LA(BSPC) &kp LA(LEFT) &kp UP    &kp LA(RIGHT) &kp LA(DEL) &trans
+   &kp DEL &kp LCTL        &kp LALT    &kp LGUI     &kp LSFT     &kp LC(L) /**/ &kp LC(A)    &kp LEFT     &kp DOWN  &kp RIGHT     &kp LC(E)   &kp RET
+   &trans  &trans          &trans      &trans       &trans       &trans    /**/ &trans       &kp PG_UP    &kp PG_DN &trans        &none       &trans
                                &trans    &trans    &trans    /**/ &trans       &tlhk LALT DEFAULT     &trans
                         >;
                 };
@@ -178,15 +178,15 @@
                 media_layer {
 // -----------------------------------------------------------------------------------------
 // the USB and BLE keys set the prefered output method when a usb cable is plugged in. 
-// |       |     | USB |     |     | BLE |\__/|     |     |      |      |   MUTE |        |
-// | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |\__/|     |     |      |      | AUDOUT | VOL_UP |
-// |       |     |     |     |     |     |\__/|     |     | PREV | NEXT | AUDIN  | VOL_DN |
+// |       |     | USB |     |     | BLE |\__/|     |     | MUTE | VOL_DN | VOL_UP |    |
+// | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |\__/|     |     |      |        | AUDOUT |    |
+// |       |     |     |     |     |     |\__/|     |     | PREV |  NEXT  | AUDIN  |    |
 //                     |     |     |     |\__/|     |     |      |
                         bindings = <
-   &none      &none   &out OUT_USB &none   &none   &out OUT_BLE /**/ &none &none &none      &none      &kp C_MUTE &trans
-   &bt BT_CLR &bt BT0 &bt BT1      &bt BT2 &bt BT3 &bt BT4      /**/ &none &none &none      &none      &kp AUDOUT &kp C_VOL_UP
-   &none      &none   &none        &none   &none   &none        /**/ &none &none &kp C_PREV &kp C_NEXT &kp AUDIN  &kp C_VOL_DN
-                                   &none   &none   &none        /**/ &none &tlhk LALT DEFAULT          &to GAMING
+   &none      &none   &out OUT_USB &none   &none   &out OUT_BLE /**/ &none &none &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans
+   &bt BT_CLR &bt BT0 &bt BT1      &bt BT2 &bt BT3 &bt BT4      /**/ &none &none &none      &none        &kp AUDOUT   &none
+   &none      &none   &none        &none   &none   &none        /**/ &none &none &kp C_PREV &kp C_NEXT   &kp AUDIN    &none 
+                                   &none   &none   &none        /**/ &none &tlhk LALT DEFAULT            &to GAMING
                         >;
                 };
 
