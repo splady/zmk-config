@@ -108,12 +108,12 @@
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L  |  U  |  Y  | ; : | Media |
-// | BSPC |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N  |  E  |  I  |  O  | '  "  |
+// | BSPC |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N  |  E  |  I  |  O  |   '   |
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H  |  ,  |  .  | / ? | Nums  |  
 //                    | JUMP| GUI | ENT |\__/| SPC | ALT | RSE |
                         bindings = <
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B  /**/ &kp J &kp L &kp U     &kp Y   &th COLON SEMI  &tdm
-   &kp BSPC    &kp A &kp R &kp S &kp T &kp G  /**/ &kp M &kp N &kp E     &kp I   &kp O           &th DQT SQT
+   &kp BSPC    &kp A &kp R &kp S &kp T &kp G  /**/ &kp M &kp N &kp E     &kp I   &kp O           &kp SQT
    &sftcps     &kp Z &kp X &kp C &kp D &kp V  /**/ &kp K &kp H &kp COMMA &kp DOT &th QMARK FSLH  &lt NUMBERS DEL
                &dtcj &kp LGUI &lt SYMBOLS RET /**/ &lt NAVI SPACE   &dtag     &tdlyr 
                         >;
@@ -136,14 +136,14 @@
                 numbers_layer {
 // -----------------------------------------------------------------------------------------
 // | TAB  |  F1 |  F2 |  F3 |  F4 |  F5 |\__/|  F6 |  F7 |  F8 |  F9 | F10 |    |
-// | BSPC |  1  |  2  |  3  |  4  |  5  |\__/|  6  |  7  |  8  |  9  |  0  |    |
-// | SHFT | F11 | F12 | F13 | F14 | F15 |\__/|     |     |     |     |     |    |
+// | BSPC |  1  |  2  |  3  |  4  |  5  |\__/|  6  |  7  |  8  |  9  |  0  |  ` |
+// | SHFT | F11 | F12 | F13 | F14 | F15 |\__/|  [  |  ]  |  -  |  =  |  \  |    |
 //                    | JUMP|     | ENT |\__/| SPC | ALT |     |
                         bindings = <
-   &trans &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  /**/ &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &trans
-   &trans &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  /**/ &kp N6 &kp N7 &kp N8 &kp N9 &kp N0  &trans
-   &trans &kp F11 &kp F12 &kp F13 &kp F14 &kp F15 /**/ &trans &trans &trans &trans &trans  &trans
-                          &trans  &trans  &trans  /**/ &trans &tlhk LALT DEFAULT   &trans
+   &trans &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  /**/ &kp F6   &kp F7   &kp F8    &kp F9    &kp F10  &trans
+   &trans &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  /**/ &kp N6   &kp N7   &kp N8    &kp N9    &kp N0   &kp GRAVE
+   &trans &kp F11 &kp F12 &kp F13 &kp F14 &kp F15 /**/ &kp LBKT &kp RBKT &kp MINUS &kp EQUAL &kp BSLH &trans
+                          &trans  &trans  &trans  /**/ &trans   &tlhk LALT DEFAULT   &trans
                         >;
                 };
 
