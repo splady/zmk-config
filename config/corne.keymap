@@ -32,7 +32,7 @@
 
 / {
         behaviors {
-                &lt {
+                lt {
                         tapping-term-ms = <321>;
                 };
                 th: tap_hold {
