@@ -32,6 +32,9 @@
 
 / {
         behaviors {
+                &lt {
+                        tapping-term-ms = <321>;
+                };
                 th: tap_hold {
                         compatible = "zmk,behavior-hold-tap";
                         label ="TAP_HOLD";
