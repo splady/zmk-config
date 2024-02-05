@@ -20,12 +20,6 @@
 #define MEDIA   5
 #define GAMING  6
 
-#define BT0     BT_SEL 0
-#define BT1     BT_SEL 1
-#define BT2     BT_SEL 2
-#define BT3     BT_SEL 3
-#define BT4     BT_SEL 4
-
 #define JUMP    LC(LG(LALT))    // used in auto hotkey to lauch apps and a few other utilities
 #define AUDOUT  LC(LG(LA(F11))) // used to swap audio output using SoundSwitch on Windows, 
 #define AUDIN   LC(LG(LA(F7))) // used to swap audio input using SoundSwitch on Windows, 
@@ -186,10 +180,10 @@
 // |       |     |     |     |     |     |\__/|     |     | PREV |  NEXT  | AUDIN  |    |
 //                     |     |     |     |\__/|     |     |      |
                         bindings = <
-   &none      &none   &out OUT_USB &none   &none   &out OUT_BLE /**/ &kp F14 &kp F15 &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans
-   &bt BT_CLR &bt BT0 &bt BT1      &bt BT2 &bt BT3 &bt BT4      /**/ &none   &none   &none      &none        &kp AUDOUT   &none
-   &none      &none   &none        &none   &none   &none        /**/ &none   &none   &kp C_PREV &kp C_NEXT   &kp AUDIN    &none 
-                                   &none   &none   &none        /**/ &none   &tlhk LALT DEFAULT            &to GAMING
+   &none      &none         &out OUT_USB  &none         &none         &out OUT_BLE  /**/ &kp F14 &kp F15 &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans
+   &bt BT_CLR &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  /**/ &none   &none   &none      &none        &kp AUDOUT   &none
+   &none      &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4 /**/ &none   &none   &kp C_PREV &kp C_NEXT   &kp AUDIN    &none 
+                                   &none   &none   &none           /**/ &none   &tlhk LALT DEFAULT            &to GAMING
                         >;
                 };
 
