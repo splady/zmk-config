@@ -158,7 +158,7 @@
    &trans  &kp LS(LC(TAB)) &kp LC(TAB) &kp LG(LBKT) &kp LG(RBKT) &trans    /**/ &kp LA(BSPC) &kp LA(LEFT) &kp UP    &kp LA(RIGHT) &kp LA(DEL) &trans
    &kp DEL &kp LCTL        &kp LALT    &kp LGUI     &kp LSFT     &kp LC(L) /**/ &kp LC(A)    &kp LEFT     &kp DOWN  &kp RIGHT     &kp LC(E)   &kp RET
    &trans  &trans          &trans      &trans       &trans       &trans    /**/ &trans       &kp PG_UP    &kp PG_DN &trans        &none       &trans
-                               &trans    &trans    &trans    /**/ &trans       &tlhk LALT DEFAULT     &trans
+                                       &trans       &trans       &trans    /**/ &trans       &tlhk LALT DEFAULT     &trans
                         >;
                 };
 
