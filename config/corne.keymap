@@ -20,9 +20,9 @@
 #define MEDIA   5
 #define GAMING  6
 
-#define JUMP    LC(LG(LALT))    // used in auto hotkey to lauch apps and a few other utilities
+#define JUMP    LC(LG(LALT))    // used in auto hotkey to launch apps and a few other utilities
 #define AUDOUT  LC(LG(LA(F11))) // used to swap audio output using SoundSwitch on Windows, 
-#define AUDIN   LC(LG(LA(F7))) // used to swap audio input using SoundSwitch on Windows, 
+#define AUDIN   LC(LG(LA(F7)))  // used to swap audio input using SoundSwitch on Windows, 
 
 / {
         behaviors {
@@ -103,6 +103,7 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
+                        display-name = "Splady";
 // -----------------------------------------------------------------------------------------
 // | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L  |  U  |  Y  |  ;  | Media |
 // | BSPC |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N  |  E  |  I  |  O  |   '   |
@@ -117,6 +118,7 @@
                 };
 
                 symbols_layer {
+                        display-name = "Symbols";
 // -----------------------------------------------------------------------------------------
 // |     |  !  |  @  |  #  |  $  |  %  |\__/|  ^  |  &  |  *  |  (  |  )  |   |
 // | DEL |  [  |  ]  |  (  |  )  |  `  |\__/| "|" |  {  |  }  |  -  |  =  | ` |
@@ -131,6 +133,7 @@
                 };
 
                 numbers_layer {
+                        display-name = "Numbers";
 // -----------------------------------------------------------------------------------------
 // | TAB  |  F1 |  F2 |  F3 |  F4 |  F5 |\__/|  F6 |  F7 |  F8 |  F9 | F10 |    |
 // | BSPC |  1  |  2  |  3  |  4  |  5  |\__/|  6  |  7  |  8  |  9  |  0  |  ` |
@@ -143,8 +146,9 @@
                           &trans  &trans  &trans  /**/ &trans   &tlhk LALT DEFAULT   &trans
                         >;
                 };
-
+1
                 navigation_layer {
+                        display-name = "Nav";
 // -----------------------------------------------------------------------------------------
 // |     | <-Tab | ->Tab | back | fwrd |     |\__/|      | a(LFT) | UP   | a(RGT) |     |    |
 // | DEL |  CTL  | ALT   | GUI  | SFT  |     |\__/| HOME | LFT    | DWN  | RGT    | END |    |
@@ -154,11 +158,12 @@
    &trans  &kp LS(LC(TAB)) &kp LC(TAB) &kp LG(LBKT) &kp LG(RBKT) &trans    /**/ &kp LA(BSPC) &kp LA(LEFT) &kp UP    &kp LA(RIGHT) &kp LA(DEL) &trans
    &kp DEL &kp LCTL        &kp LALT    &kp LGUI     &kp LSFT     &kp LC(L) /**/ &kp LC(A)    &kp LEFT     &kp DOWN  &kp RIGHT     &kp LC(E)   &kp RET
    &trans  &trans          &trans      &trans       &trans       &trans    /**/ &trans       &kp PG_UP    &kp PG_DN &trans        &none       &trans
-                               &trans    &trans    &trans    /**/ &trans       &tlhk LALT DEFAULT     &trans
+                               &trans    &trans    &trans    /**/ &trans       &tlhk LALT DEFA0ULT     &trans
                         >;
                 };
 
                 numpad_layer {
+                        display-name = "Numpad";
 // -----------------------------------------------------------------------------------------
 // |   |   |   |   |   |   |\__/| CALC |  7  |  8  |  9  |  .  |      |
 // |   |   |   |   |   |   |\__/|  /   |  4  |  5  |  6  |  -  | TAB  |
@@ -173,6 +178,7 @@
                 };
 
                 media_layer {
+                        display-name = "Media";
 // -----------------------------------------------------------------------------------------
 // the USB and BLE keys set the prefered output method when a usb cable is plugged in. 
 // |       |     | USB |     |     | BLE |\__/|     |     | MUTE | VOL_DN | VOL_UP |    |
@@ -188,6 +194,7 @@
                 };
 
                 gaming_layer {
+                        display-name = "Gaming";
 // -----------------------------------------------------------------------------------------
 // | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L   |  U  |  Y  |  ;  | Media |
 // | BSPC |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N   |  E  |  I  |  O  |   '   |
@@ -197,7 +204,7 @@
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B /**/ &kp J &kp L &kp U     &kp Y      &kp SEMI &tdm
    &kp BSPC    &kp A &kp R &kp S &kp T &kp G /**/ &kp M &kp N &kp E     &kp I      &kp O    &kp SQT
    &kp LSHFT   &kp Z &kp X &kp C &kp D &kp V /**/ &kp K &kp H &kp COMMA &kp DOT    &kp FSLH &lt NUMBERS DEL
-               &kp RET  &kp LGUI &kp SPACE   /**/ &lt NAVI SPACE        &tlhk LALT DEFAULT  &kp RALT
+               &kp F3  &kp F4   &kp SPACE   /**/ &lt NAVI SPACE        &tlhk LALT DEFAULT  &kp RALT
                         >;
                 };
         };
