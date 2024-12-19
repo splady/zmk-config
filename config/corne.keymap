@@ -146,7 +146,7 @@
                           &trans  &trans  &trans  /**/ &trans   &tlhk LALT DEFAULT   &trans
                         >;
                 };
-1
+
                 navigation_layer {
                         display-name = "Nav";
 // -----------------------------------------------------------------------------------------
