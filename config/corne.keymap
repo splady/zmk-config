@@ -57,14 +57,14 @@
                         compatible = "zmk,behavior-tap-dance";
                         label = "SHIFT_CAPS_WORD";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <321>;
                         bindings = <&kp LSHIFT>, <&smart_caps>;
                 };
                 tdm: tap_dance_media {
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_MEDIA";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <321>;
                         bindings = <&lt MEDIA C_PLAY_PAUSE>, <&th C_MUTE C_NEXT>;
                 };
                 tdsdcq: tap_dance_sdcq {
@@ -73,28 +73,28 @@
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_SDCQ";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <321>;
                         bindings = <&th DOT SPACE>, <&th QMARK COMMA>;
                 };
                 dtag: double_tap_alt_gui {
                         compatible = "zmk,behavior-tap-dance";
                         label ="DOUBLE_TAP_ALT_GUI";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <321>;
                         bindings = <&kp LALT>, <&kp LGUI>;
                 };
                 dtcj: double_tap_ctl_jump {
                         compatible = "zmk,behavior-tap-dance";
                         label ="DOUBLE_TAP_CTL_JUMP";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <321>;
                         bindings = <&kp LCTRL>, <&kp JUMP>;
                 };
                 tdlyr: tap_dance_layers {
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_LAYERS";
                         #binding-cells = <0>;
-                        tapping-term-ms = <200>;
+                        tapping-term-ms = <321>;
                         bindings = <&mo SYMBOLS>, <&to NUMPAD>, <&to GAMING>;
                 };
         };
@@ -156,7 +156,7 @@
 //                       |      |      |     |\__/|      |        |      |
                         bindings = <
    &trans  &kp LS(LC(TAB)) &kp LC(TAB) &kp LG(LBKT) &kp LG(RBKT) &trans    /**/ &kp LA(BSPC) &kp LA(LEFT) &kp UP    &kp LA(RIGHT) &kp LA(DEL) &trans
-   &kp DEL &kp LCTL        &kp LALT    &kp LGUI     &kp LSFT     &kp LC(L) /**/ &kp LC(A)    &kp LEFT     &kp DOWN  &kp RIGHT     &kp LC(E)   &kp RET
+   &kp DEL &kp LCTL        &kp LALT    &kp LGUI     &kp LSFT     &kp LC(L) /**/ &kp LC(LEFT)    &kp LEFT     &kp DOWN  &kp RIGHT     &kp LC(RIGHT)   &kp RET
    &trans  &trans          &trans      &trans       &trans       &trans    /**/ &trans       &kp PG_UP    &kp PG_DN &trans        &none       &trans
                                        &trans       &trans       &trans    /**/ &trans       &tlhk LALT DEFAULT     &trans
                         >;
