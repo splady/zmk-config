@@ -150,14 +150,14 @@
                 navigation_layer {
                         display-name = "Nav";
 // -----------------------------------------------------------------------------------------
-// |     | <-Tab | ->Tab | back | fwrd |     |\__/|      | a(LFT) | UP   | a(RGT) |     |    |
-// | DEL |  CTL  | ALT   | GUI  | SFT  |     |\__/| HOME | LFT    | DWN  | RGT    | END |    |
-// |     |       |       |      |      |     |\__/|      | PG_UP  | PG_DN|        |     |    |
-//                       |      |      |     |\__/|      |        |      |
+// |     | <-Tab | ->Tab | back | fwrd |     |\__/|      | a(LFT) | UP    | a(RGT) |     |    |
+// | DEL |  CTL  | ALT   | GUI  | SFT  |     |\__/| HOME | LFT    | DWN   | RGT    | END |    |
+// |     |       |       |      |      |     |\__/| Back | fwrd   | PG_UP | PG_DN  |     |    |
+//                       |      |      |     |\__/|      |        |       |
                         bindings = <
-   &trans  &kp LS(LC(TAB)) &kp LC(TAB) &kp LG(LBKT) &kp LG(RBKT) &trans    /**/ &kp LA(BSPC) &kp LA(LEFT) &kp UP    &kp LA(RIGHT) &kp LA(DEL) &trans
-   &kp DEL &kp LCTL        &kp LALT    &kp LGUI     &kp LSFT     &kp LC(L) /**/ &kp LC(LEFT)    &kp LEFT     &kp DOWN  &kp RIGHT     &kp LC(RIGHT)   &kp RET
-   &trans  &trans          &trans      &trans       &trans       &trans    /**/ &trans       &kp PG_UP    &kp PG_DN &trans        &none       &trans
+   &trans  &kp LS(LC(TAB)) &kp LC(TAB) &kp LG(LBKT) &kp LG(RBKT) &trans    /**/ &kp LA(BSPC) &kp LA(LEFT) &kp UP    &kp LA(RIGHT) &kp LA(DEL)   &trans
+   &kp DEL &kp LCTL        &kp LALT    &kp LGUI     &kp LSFT     &kp LC(L) /**/ &kp LC(LEFT) &kp LEFT     &kp DOWN  &kp RIGHT     &kp LC(RIGHT) &kp RET
+   &trans  &trans          &trans      &trans       &trans       &trans    /**/ &kp LG(LBKT) &kp LG(RBKT) &kp PG_UP &kp PG_DN     &trans        &trans
                                        &trans       &trans       &trans    /**/ &trans       &tlhk LALT DEFAULT     &trans
                         >;
                 };
