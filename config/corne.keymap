@@ -29,6 +29,15 @@
                 lt {
                         tapping-term-ms = <321>;
                 };
+                nav_spc: navigation_space {
+                        compatible = "zmk,behavior-hold-tap";
+                        #binding-cells = <2>;
+                        tapping-term-ms = <321>;
+                        quick-tap-ms = <0>;
+                        flavor = "tap-preferred";
+                        require-prior-idle-ms = <150>;
+                        bindings = <&mo>, <&kp>;
+                };
                 th: tap_hold {
                         compatible = "zmk,behavior-hold-tap";
                         label ="TAP_HOLD";
@@ -113,7 +122,7 @@
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B  /**/ &kp J &kp L &kp U     &kp Y   &kp SEMI &tdm
    &kp BSPC    &kp A &kp R &kp S &kp T &kp G  /**/ &kp M &kp N &kp E     &kp I   &kp O    &kp SQT
    &sftcps     &kp Z &kp X &kp C &kp D &kp V  /**/ &kp K &kp H &kp COMMA &kp DOT &kp FSLH &mo NUMBERS
-               &dtcj &kp LGUI &lt SYMBOLS RET /**/ &lt NAVI SPACE   &dtag     &tdlyr 
+               &dtcj &kp LGUI &lt SYMBOLS RET /**/ &nav_spc NAVI SPACE   &dtag     &tdlyr
                         >;
                 };
 
@@ -121,12 +130,12 @@
                         display-name = "Symbols";
 // -----------------------------------------------------------------------------------------
 // |     |  !  |  @  |  #  |  $  |  %  |\__/|  ^  |  &  |  *  |  (  |  )  |   |
-// | DEL |  [  |  ]  |  (  |  )  |  `  |\__/| "|" |  {  |  }  |  -  |  =  | ` |
+// | DEL |  [  |  ]  |  (  |  )  |  `  |\__/|  \  |  {  |  }  |  -  |  =  | ` |
 // |     |  <  |  >  |  {  |  }  |  .  |\__/|  _  |  ~  |  +  |  _  |  \  |   |
 //                   | JUMP|     | ENT |\__/| SPC | ALT |     |
                         bindings = <
    &trans  &kp EXCL      &kp AT           &kp HASH &kp DLLR &kp PRCNT /**/ &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &trans
-   &kp DEL &kp LBKT      &kp RBKT         &kp LPAR &kp RPAR &kp GRAVE /**/ &kp PIPE  &kp LBRC  &kp RBRC        &kp MINUS &kp EQUAL &kp GRAVE
+   &kp DEL &kp LBKT      &kp RBKT         &kp LPAR &kp RPAR &kp GRAVE /**/ &kp BSLH  &kp LBRC  &kp RBRC        &kp MINUS &kp EQUAL &kp GRAVE
    &trans  &kp LESS_THAN &kp GREATER_THAN &kp LBRC &kp RBRC &tdsdcq   /**/ &kp UNDER &kp TILDE &kp PLUS        &kp UNDER &kp BSLH  &trans
                     	                  &trans   &trans   &trans    /**/ &trans    &tlhk LALT DEFAULT            &trans
                         >;
@@ -156,7 +165,7 @@
 //                       |      |      |     |\__/|      |        |       |
                         bindings = <
    &trans  &kp LS(LC(TAB)) &kp LC(TAB) &kp LG(LBKT) &kp LG(RBKT) &trans    /**/ &kp LA(BSPC) &kp LA(LEFT) &kp UP    &kp LA(RIGHT) &kp LA(DEL)   &trans
-   &kp DEL &kp LCTL        &kp LALT    &kp LGUI     &kp LSFT     &kp LC(L) /**/ &kp LC(LEFT) &kp LEFT     &kp DOWN  &kp RIGHT     &kp LC(RIGHT) &kp RET
+   &kp DEL &kp LCTL        &kp LALT    &kp LGUI     &kp LSFT     &kp LC(L) /**/ &kp LC(A)    &kp LEFT     &kp DOWN  &kp RIGHT     &kp LC(E)     &kp RET
    &trans  &trans          &trans      &trans       &trans       &trans    /**/ &kp LG(LBKT) &kp LG(RBKT) &kp PG_UP &kp PG_DN     &trans        &trans
                                        &trans       &trans       &trans    /**/ &trans       &tlhk LALT DEFAULT     &trans
                         >;
@@ -204,7 +213,7 @@
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B /**/ &kp J &kp L &kp U     &kp Y      &kp SEMI &tdm
    &kp BSPC    &kp A &kp R &kp S &kp T &kp G /**/ &kp M &kp N &kp E     &kp I      &kp O    &kp SQT
    &kp LSHFT   &kp Z &kp X &kp C &kp D &kp V /**/ &kp K &kp H &kp COMMA &kp DOT    &kp FSLH &lt NUMBERS DEL
-               &kp F3  &kp F4   &kp SPACE   /**/ &lt NAVI SPACE        &tlhk LALT DEFAULT  &kp RALT
+               &kp F3  &kp F4   &kp SPACE   /**/ &nav_spc NAVI SPACE        &tlhk LALT DEFAULT  &kp RALT
                         >;
                 };
         };
