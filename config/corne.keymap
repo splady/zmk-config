@@ -121,7 +121,7 @@
                         bindings = <
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B  /**/ &kp J &kp L &kp U     &kp Y   &kp SEMI &tdm
    &kp BSPC    &kp A &kp R &kp S &kp T &kp G  /**/ &kp M &kp N &kp E     &kp I   &kp O    &kp SQT
-   &sftcps     &kp Z &kp X &kp C &kp D &kp V  /**/ &kp K &kp H &kp COMMA &kp DOT &kp FSLH &mo NUMBERS
+   &sftcps     &kp Z &kp X &kp C &kp D &kp V  /**/ &kp K &kp H &kp COMMA &kp DOT &kp FSLH &sl NUMBERS
                &dtcj &kp LGUI &lt SYMBOLS RET /**/ &nav_spc NAVI SPACE   &dtag     &tdlyr
                         >;
                 };
