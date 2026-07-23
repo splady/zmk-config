@@ -190,7 +190,7 @@
                         display-name = "Media";
 // -----------------------------------------------------------------------------------------
 // the USB and BLE keys set the prefered output method when a usb cable is plugged in. 
-// |       |     | USB |     |     | BLE |\__/|     |     | MUTE | VOL_DN | VOL_UP |    |
+// |       |     | USB |     |     | BLE |\__/| BRI- | BRI+ | MUTE | VOL_DN | VOL_UP |    |
 // | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |\__/|     |     |      |        | AUDOUT | PREV |
 // |       |     |     |     |     |     |\__/|     |     | PREV |  NEXT  | AUDIN  |    |
 //                     |     |     |     |\__/|     |     |      |
