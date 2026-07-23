@@ -159,10 +159,10 @@
                 navigation_layer {
                         display-name = "Nav";
 // -----------------------------------------------------------------------------------------
-// |     | <-Tab | ->Tab | back | fwrd |     |\__/|      | a(LFT) | UP    | a(RGT) |     |    |
-// | DEL |  CTL  | ALT   | GUI  | SFT  |     |\__/| HOME | LFT    | DWN   | RGT    | END |    |
+// |     | <-Tab | ->Tab | back | fwrd |     |\__/| a(BSP) | a(LFT) | UP    | a(RGT) | a(DEL) |    |
+// | DEL |  CTL  | ALT   | GUI  | SFT  | c(L) |\__/| HOME   | LFT    | DWN   | RGT    | END    | ENT |
 // |     |       |       |      |      |     |\__/| Back | fwrd   | PG_UP | PG_DN  |     |    |
-//                       |      |      |     |\__/|      |        |       |
+//                       |      |      |     |\__/|      | ALT    |       |
                         bindings = <
    &trans  &kp LS(LC(TAB)) &kp LC(TAB) &kp LG(LBKT) &kp LG(RBKT) &trans    /**/ &kp LA(BSPC) &kp LA(LEFT) &kp UP    &kp LA(RIGHT) &kp LA(DEL)   &trans
    &kp DEL &kp LCTL        &kp LALT    &kp LGUI     &kp LSFT     &kp LC(L) /**/ &kp LC(A)    &kp LEFT     &kp DOWN  &kp RIGHT     &kp LC(E)     &kp RET
@@ -174,10 +174,10 @@
                 numpad_layer {
                         display-name = "Numpad";
 // -----------------------------------------------------------------------------------------
-// |   |   |   |   |   |   |\__/| CALC |  7  |  8  |  9  |  .  |      |
-// |   |   |   |   |   |   |\__/|  /   |  4  |  5  |  6  |  -  | TAB  |
-// |   |   |   |   |   |   |\__/|  *   |  1  |  2  |  3  |  +  | BSPC |
-//             |   |   |   |\__/| SPC  | LWR |  0  |
+// |   |   |   |   |   |   |\__/|  /   |  7  |  8  |  9  |  -  |      |
+// |   |   |   |   |   |   |\__/|  *   |  4  |  5  |  6  |  +  | TAB  |
+// |   |   |   |   |   |   |\__/| ENT  |  1  |  2  |  3  |  .  | BSPC |
+//             |   |   |   |\__/| SPC  | ALT |  0  |
                         bindings = <
    &trans &trans &trans &trans &trans &trans /**/ &kp SLASH &kp N7  &kp N8  &kp N9  &kp MINUS &trans
    &trans &trans &trans &trans &trans &trans /**/ &kp STAR  &kp N4  &kp N5  &kp N6  &kp PLUS  &kp TAB
@@ -192,8 +192,8 @@
 // the USB and BLE keys set the prefered output method when a usb cable is plugged in. 
 // |       |     | USB |     |     | BLE |\__/| BRI- | BRI+ | MUTE | VOL_DN | VOL_UP |    |
 // | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |\__/|     |     |      |        | AUDOUT | PREV |
-// |       |     |     |     |     |     |\__/|     |     | PREV |  NEXT  | AUDIN  |    |
-//                     |     |     |     |\__/|     |     |      |
+// |       | DC1 | DC2 | DC3 | DC4 | DC5 |\__/|     |     | PREV |  NEXT  | AUDIN  |    |
+//                     |     |     |     |\__/|     | ALT | GAME |
                         bindings = <
    &none      &none         &out OUT_USB  &none         &none         &out OUT_BLE  /**/ &kp F14 &kp F15 &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans
    &bt BT_CLR &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  /**/ &none   &none   &none      &none        &kp AUDOUT   &kp C_PREV
@@ -208,7 +208,7 @@
 // | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L   |  U  |  Y  |  ;  | Media |
 // | BSPC |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N   |  E  |  I  |  O  |   '   |
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H   |  ,  |  .  |  /  | Nums  |  
-//                    | RET | GUI | SPC |\__/| SPC | LWR  | ALT |
+//                    | F3  | F4  | SPC |\__/| SPC | ALT  | RALT |
                         bindings = <
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B /**/ &kp J &kp L &kp U     &kp Y      &kp SEMI &tdm
    &kp BSPC    &kp A &kp R &kp S &kp T &kp G /**/ &kp M &kp N &kp E     &kp I      &kp O    &kp SQT
