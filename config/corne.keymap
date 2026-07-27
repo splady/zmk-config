@@ -25,9 +25,25 @@
 #define AUDIN   LC(LG(LA(F7)))  // used to swap audio input using SoundSwitch on Windows, 
 
 / {
+        keys {
+                compatible = "gpio-keys";
+
+                // Left Shift and right Numbers: bottom outer key on each half.
+                outer_bottom_key: outer_bottom_key {
+                        gpios = <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+                };
+        };
+
+        wakeup_scan: wakeup_scan {
+                compatible = "zmk,gpio-key-wakeup-trigger";
+                trigger = <&outer_bottom_key>;
+                wakeup-source;
+                extra-gpios = <&pro_micro 21 GPIO_ACTIVE_HIGH>;
+        };
+
         soft_off_wakers {
                 compatible = "zmk,soft-off-wakeup-sources";
-                wakeup-sources = <&kscan0>;
+                wakeup-sources = <&wakeup_scan>;
         };
 
         behaviors {
