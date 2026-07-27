@@ -211,12 +211,12 @@
                         display-name = "Media";
 // -----------------------------------------------------------------------------------------
 // the USB and BLE keys set the prefered output method when a usb cable is plugged in. 
-// |  OFF  |     | USB |     |     | BLE |\__/| BRI- | BRI+ | MUTE | VOL_DN | VOL_UP |    |
+// |  OFF  | LOCK| USB |     |     | BLE |\__/| BRI- | BRI+ | MUTE | VOL_DN | VOL_UP |    |
 // | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |\__/|     |     |      |        | AUDOUT | PREV |
 // |       | DC1 | DC2 | DC3 | DC4 | DC5 |\__/|     |     | PREV |  NEXT  | AUDIN  |    |
 //                     |     |     |     |\__/|     | ALT | GAME |
                         bindings = <
-   &soft_off  &none         &out OUT_USB  &none         &none         &out OUT_BLE  /**/ &kp F14 &kp F15 &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans
+   &soft_off  &kp LC(LG(Q)) &out OUT_USB  &none         &none         &out OUT_BLE  /**/ &kp F14 &kp F15 &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans
    &bt BT_CLR &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  /**/ &none   &none   &none      &none        &kp AUDOUT   &kp C_PREV
    &none      &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4 /**/ &none   &none   &kp C_PREV &kp C_NEXT   &kp AUDIN    &none 
                                    &none   &none   &none           /**/ &none   &tlhk LALT DEFAULT            &to GAMING
