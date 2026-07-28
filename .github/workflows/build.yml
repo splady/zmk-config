@@ -1,3 +1,9 @@
+# Updating ZMK
+#
+# ZMK is pinned to a commit for reproducible builds. Periodically update the
+# commit SHA in both `config/west.yml` and this file, keeping the two values
+# identical, then confirm the GitHub Actions firmware build succeeds.
+
 name: Build ZMK firmware
 
 on:
