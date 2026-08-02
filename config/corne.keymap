@@ -152,12 +152,12 @@
 // -----------------------------------------------------------------------------------------
 // |     |  !  |  @  |  #  |  $  |  %  |\__/|  ^  |  &  |  *  |  (  |  )  |   |
 // | DEL |  [  |  ]  |  (  |  )  |  `  |\__/|  \  |  {  |  }  |  -  |  =  | ` |
-// |     |  <  |  >  |  {  |  }  |  .  |\__/|  _  |  ~  |  +  |  _  |  \  |   |
+// |     |  <  |  >  |  {  |  }  |  .  |\__/|  _  |  ~  |  +  |  _  |  \  | BASE |
 //                   | JUMP|     | ENT |\__/| SPC | ALT |     |
                         bindings = <
    &trans  &kp EXCL      &kp AT           &kp HASH &kp DLLR &kp PRCNT /**/ &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &trans
    &kp DEL &kp LBKT      &kp RBKT         &kp LPAR &kp RPAR &kp GRAVE /**/ &kp BSLH  &kp LBRC  &kp RBRC        &kp MINUS &kp EQUAL &kp GRAVE
-   &trans  &kp LESS_THAN &kp GREATER_THAN &kp LBRC &kp RBRC &tdsdcq   /**/ &kp UNDER &kp TILDE &kp PLUS        &kp UNDER &kp BSLH  &trans
+   &trans  &kp LESS_THAN &kp GREATER_THAN &kp LBRC &kp RBRC &tdsdcq   /**/ &kp UNDER &kp TILDE &kp PLUS        &kp UNDER &kp BSLH  &to DEFAULT
                     	                  &trans   &trans   &trans    /**/ &trans    &tlhk LALT DEFAULT            &trans
                         >;
                 };
@@ -167,12 +167,12 @@
 // -----------------------------------------------------------------------------------------
 // | TAB  |  F1 |  F2 |  F3 |  F4 |  F5 |\__/|  F6 |  F7 |  F8 |  F9 | F10 |    |
 // | BSPC |  1  |  2  |  3  |  4  |  5  |\__/|  6  |  7  |  8  |  9  |  0  |  ` |
-// | SHFT | F11 | F12 | F13 | F14 | F15 |\__/|  [  |  ]  |  -  |  =  |  \  |    |
+// | SHFT | F11 | F12 | F13 | F14 | F15 |\__/|  [  |  ]  |  -  |  =  |  \  | BASE |
 //                    | JUMP|     | ENT |\__/| SPC | ALT |     |
                         bindings = <
    &trans &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  /**/ &kp F6   &kp F7   &kp F8    &kp F9    &kp F10  &trans
    &trans &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  /**/ &kp N6   &kp N7   &kp N8    &kp N9    &kp N0   &kp GRAVE
-   &trans &kp F11 &kp F12 &kp F13 &kp F14 &kp F15 /**/ &kp LBKT &kp RBKT &kp MINUS &kp EQUAL &kp BSLH &trans
+   &trans &kp F11 &kp F12 &kp F13 &kp F14 &kp F15 /**/ &kp LBKT &kp RBKT &kp MINUS &kp EQUAL &kp BSLH &to DEFAULT
                           &trans  &trans  &trans  /**/ &trans   &tlhk LALT DEFAULT   &trans
                         >;
                 };
@@ -182,12 +182,12 @@
 // -----------------------------------------------------------------------------------------
 // |     | <-Tab | ->Tab | back | fwrd |     |\__/| a(BSP) | a(LFT) | UP    | a(RGT) | a(DEL) |    |
 // | DEL |  CTL  | ALT   | GUI  | SFT  | c(L) |\__/| HOME   | LFT    | DWN   | RGT    | END    | ENT |
-// |     |       |       |      |      |     |\__/| Back | fwrd   | PG_UP | PG_DN  |     |    |
+// |     |       |       |      |      |     |\__/| Back | fwrd   | PG_UP | PG_DN  |     | BASE |
 //                       |      |      |     |\__/|      | ALT    |       |
                         bindings = <
    &trans  &kp LS(LC(TAB)) &kp LC(TAB) &kp LG(LBKT) &kp LG(RBKT) &trans    /**/ &kp LA(BSPC) &kp LA(LEFT) &kp UP    &kp LA(RIGHT) &kp LA(DEL)   &trans
    &kp DEL &kp LCTL        &kp LALT    &kp LGUI     &kp LSFT     &kp LC(L) /**/ &kp LC(A)    &kp LEFT     &kp DOWN  &kp RIGHT     &kp LC(E)     &kp RET
-   &trans  &trans          &trans      &trans       &trans       &trans    /**/ &kp LG(LBKT) &kp LG(RBKT) &kp PG_UP &kp PG_DN     &trans        &trans
+   &trans  &trans          &trans      &trans       &trans       &trans    /**/ &kp LG(LBKT) &kp LG(RBKT) &kp PG_UP &kp PG_DN     &trans        &to DEFAULT
                                        &trans       &trans       &trans    /**/ &trans       &tlhk LALT DEFAULT     &trans
                         >;
                 };
@@ -228,12 +228,12 @@
 // -----------------------------------------------------------------------------------------
 // | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L   |  U  |  Y  |  ;  | Media |
 // | BSPC |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N   |  E  |  I  |  O  |   '   |
-// | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H   |  ,  |  .  |  /  | Nums  |  
+// | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H   |  ,  |  .  |  /  | BASE  |
 //                    | F3  | F4  | SPC |\__/| ENT | ALT  | RALT |
                         bindings = <
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B /**/ &kp J &kp L &kp U     &kp Y      &kp SEMI &tdm
    &kp BSPC    &kp A &kp R &kp S &kp T &kp G /**/ &kp M &kp N &kp E     &kp I      &kp O    &kp SQT
-   &kp LSHFT   &kp Z &kp X &kp C &kp D &kp V /**/ &kp K &kp H &kp COMMA &kp DOT    &kp FSLH &lt NUMBERS DEL
+   &kp LSHFT   &kp Z &kp X &kp C &kp D &kp V /**/ &kp K &kp H &kp COMMA &kp DOT    &kp FSLH &to DEFAULT
                &kp F3  &kp F4   &kp SPACE   /**/ &nav_spc NAVI RET          &tlhk LALT DEFAULT  &kp RALT
                         >;
                 };
