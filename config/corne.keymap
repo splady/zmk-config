@@ -229,12 +229,12 @@
 // | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L   |  U  |  Y  |  ;  | Media |
 // | BSPC |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N   |  E  |  I  |  O  |   '   |
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H   |  ,  |  .  |  /  | Nums  |  
-//                    | F3  | F4  | SPC |\__/| SPC | ALT  | RALT |
+//                    | F3  | F4  | SPC |\__/| ENT | ALT  | RALT |
                         bindings = <
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B /**/ &kp J &kp L &kp U     &kp Y      &kp SEMI &tdm
    &kp BSPC    &kp A &kp R &kp S &kp T &kp G /**/ &kp M &kp N &kp E     &kp I      &kp O    &kp SQT
    &kp LSHFT   &kp Z &kp X &kp C &kp D &kp V /**/ &kp K &kp H &kp COMMA &kp DOT    &kp FSLH &lt NUMBERS DEL
-               &kp F3  &kp F4   &kp SPACE   /**/ &nav_spc NAVI SPACE        &tlhk LALT DEFAULT  &kp RALT
+               &kp F3  &kp F4   &kp SPACE   /**/ &nav_spc NAVI RET          &tlhk LALT DEFAULT  &kp RALT
                         >;
                 };
         };
