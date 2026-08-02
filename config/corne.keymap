@@ -197,13 +197,13 @@
 // -----------------------------------------------------------------------------------------
 // |   |   |   |   |   |   |\__/|  /   |  7  |  8  |  9  |  -  |      |
 // |   |   |   |   |   |   |\__/|  *   |  4  |  5  |  6  |  +  | TAB  |
-// |   |   |   |   |   |   |\__/| ENT  |  1  |  2  |  3  |  .  | BSPC |
-//             |   |   |   |\__/| SPC  | ALT |  0  |
+// |   |   |   |   |   |   |\__/| ENT  |  1  |  2  |  3  |  .  | BASE |
+//             |   |   |   |\__/| SPC  | BSPC|  0  |
                         bindings = <
    &trans &trans &trans &trans &trans &trans /**/ &kp SLASH &kp N7  &kp N8  &kp N9  &kp MINUS &trans
    &trans &trans &trans &trans &trans &trans /**/ &kp STAR  &kp N4  &kp N5  &kp N6  &kp PLUS  &kp TAB
-   &trans &trans &trans &trans &trans &trans /**/ &kp ENTER &kp N1  &kp N2  &kp N3  &kp DOT   &kp BSPC
-                        &trans &trans &trans /**/ &trans    &tlhk LALT DEFAULT      &kp N0
+   &trans &trans &trans &trans &trans &trans /**/ &kp ENTER &kp N1  &kp N2  &kp N3  &kp DOT   &to DEFAULT
+                        &trans &trans &trans /**/ &trans    &kp BSPC                &kp N0
                         >;
                 };
 
@@ -213,12 +213,12 @@
 // the USB and BLE keys set the prefered output method when a usb cable is plugged in. 
 // |  OFF  | LOCK| USB |     |     | BLE |\__/| BRI- | BRI+ | MUTE | VOL_DN | VOL_UP |    |
 // | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |\__/|     |     |      |        | AUDOUT | PREV |
-// |       | DC1 | DC2 | DC3 | DC4 | DC5 |\__/|     |     | PREV |  NEXT  | AUDIN  |    |
+// |       | DC1 | DC2 | DC3 | DC4 | DC5 |\__/|     |     | PREV |  NEXT  | AUDIN  | NPAD |
 //                     |     |     |     |\__/|     | ALT | GAME |
                         bindings = <
    &soft_off  &kp LC(LG(Q)) &out OUT_USB  &none         &none         &out OUT_BLE  /**/ &kp F14 &kp F15 &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans
    &bt BT_CLR &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  /**/ &none   &none   &none      &none        &kp AUDOUT   &kp C_PREV
-   &none      &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4 /**/ &none   &none   &kp C_PREV &kp C_NEXT   &kp AUDIN    &none 
+   &none      &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4 /**/ &none   &none   &kp C_PREV &kp C_NEXT   &kp AUDIN    &to NUMPAD
                                    &none   &none   &none           /**/ &none   &tlhk LALT DEFAULT            &to GAMING
                         >;
                 };
