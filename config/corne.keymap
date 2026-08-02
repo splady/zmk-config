@@ -138,12 +138,12 @@
 // | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L  |  U  |  Y  |  ;  | Media |
 // | BSPC |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N  |  E  |  I  |  O  |   '   |
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H  |  ,  |  .  |  /  | Nums  |  
-//                    | JUMP| GUI | ENT |\__/| SPC | ALT | RSE |
+//                    | JUMP| GUI | ENT |\__/| SPC | ALT | CMD |
                         bindings = <
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B  /**/ &kp J &kp L &kp U     &kp Y   &kp SEMI &tdm
    &kp BSPC    &kp A &kp R &kp S &kp T &kp G  /**/ &kp M &kp N &kp E     &kp I   &kp O    &kp SQT
    &sftcps     &kp Z &kp X &kp C &kp D &kp V  /**/ &kp K &kp H &kp COMMA &kp DOT &kp FSLH &sl NUMBERS
-               &dtcj &kp LGUI &lt SYMBOLS RET /**/ &nav_spc NAVI SPACE   &dtag     &tdlyr
+               &dtcj &kp LGUI &lt SYMBOLS RET /**/ &nav_spc NAVI SPACE   &kp LALT  &kp LGUI
                         >;
                 };
 
@@ -214,12 +214,12 @@
 // |  OFF  | LOCK| USB |     |     | BLE |\__/| BRI- | BRI+ | MUTE | VOL_DN | VOL_UP |    |
 // | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |\__/|     |     |      |        | AUDOUT | PREV |
 // |       | DC1 | DC2 | DC3 | DC4 | DC5 |\__/|     |     | PREV |  NEXT  | AUDIN  | NPAD |
-//                     |     |     |     |\__/|     | ALT | GAME |
+//                     |     |     | GAME|\__/|     | ALT | CMD  |
                         bindings = <
    &soft_off  &kp LC(LG(Q)) &out OUT_USB  &none         &none         &out OUT_BLE  /**/ &kp F14 &kp F15 &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &trans
    &bt BT_CLR &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  /**/ &none   &none   &none      &none        &kp AUDOUT   &kp C_PREV
    &none      &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4 /**/ &none   &none   &kp C_PREV &kp C_NEXT   &kp AUDIN    &to NUMPAD
-                                   &none   &none   &none           /**/ &none   &tlhk LALT DEFAULT            &to GAMING
+                                   &none   &none   &to GAMING      /**/ &none   &trans                         &trans
                         >;
                 };
 
@@ -229,12 +229,12 @@
 // | TAB  |  Q  |  W  |  F  |  P  |  B  |\__/|  J  |  L   |  U  |  Y  |  ;  | Media |
 // | BSPC |  A  |  R  |  S  |  T  |  G  |\__/|  M  |  N   |  E  |  I  |  O  |   '   |
 // | SHFT |  Z  |  X  |  C  |  D  |  V  |\__/|  K  |  H   |  ,  |  .  |  /  | Nums  |  
-//                    | F3  | F4  | SPC |\__/| SPC | ALT  | RALT |
+//                    | F3  | F4  | SPC |\__/| ENT | ALT  | RALT |
                         bindings = <
    &th ESC TAB &kp Q &kp W &kp F &kp P &kp B /**/ &kp J &kp L &kp U     &kp Y      &kp SEMI &tdm
    &kp BSPC    &kp A &kp R &kp S &kp T &kp G /**/ &kp M &kp N &kp E     &kp I      &kp O    &kp SQT
    &kp LSHFT   &kp Z &kp X &kp C &kp D &kp V /**/ &kp K &kp H &kp COMMA &kp DOT    &kp FSLH &lt NUMBERS DEL
-               &kp F3  &kp F4   &kp SPACE   /**/ &nav_spc NAVI SPACE        &tlhk LALT DEFAULT  &kp RALT
+               &kp F3  &kp F4   &kp SPACE   /**/ &nav_spc NAVI RET          &tlhk LALT DEFAULT  &kp RALT
                         >;
                 };
         };
